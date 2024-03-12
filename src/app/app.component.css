@@ -1,0 +1,32 @@
+.navBarContainer {
+  background: #0d81fd;
+  background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,161,255,1) 43%, rgba(13,129,253,1) 100%);
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  background-size: cover;
+  position: fixed;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 650px) {
+  .navBarContainer {
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .navBarContainer {
+    height: 5rem;
+    /* height: 9rem; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    z-index: 2;
+  }
+
+  .navBarContainer.first-active{
+    height: 9rem;
+  }
+}

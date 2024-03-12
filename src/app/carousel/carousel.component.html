@@ -1,0 +1,203 @@
+<section>
+  <div *ngIf='carouselErrors.length' class="row carouselErrorContainer">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of carouselErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <div *ngIf="carouselGoogleReviewsToDisplay && carouselGoogleReviewsToDisplay.length > 0" class="row carouselContainer">
+    <nav class="reviewNavBar">
+      <div class="reviewNavBarContainer">
+        <ul class="reviewNavBarMenu">
+          <li class="reviewNavBarItem"><a class="btn btn-primary reviewNavBarLinks" href="https://www.google.com/search?q=Terry+Dockery+Investigations+and+Security+Services&ei=yjCAYdbPKdqttQbxyZKICg&oq=Terry+Dockery+Investigations+and+Security+Services&gs_lcp=Cgdnd3Mtd2l6EAwyBQghEKABMgUIIRCgATIFCCEQqwI6CAgAEIAEELADSgQIQRgBUOvDAVjrwwFg894BaANwAHgAgAHyAYgB8gGSAQMyLTGYAQCgAQKgAQHIAQHAAQE&sclient=gws-wiz&ved=0ahUKEwjW3ILE5PfzAhXaVs0KHfGkBKEQ4dUDCA4#lrd=0x883e808771a44aa7:0x769d0e746c737a97,1,,," role="button">All Reviews</a></li>
+          <li class="reviewNavBarItem"><h3 id="reviewNavBarTitleGoogle" class="reviewNavBarTitle">Google Customer Reviews</h3></li>
+          <li class="reviewNavBarItem"><a class="btn btn-primary reviewNavBarLinks" href="https://www.google.com/search?q=Terry+Dockery+Investigations+and+Security+Services&ei=yjCAYdbPKdqttQbxyZKICg&oq=Terry+Dockery+Investigations+and+Security+Services&gs_lcp=Cgdnd3Mtd2l6EAwyBQghEKABMgUIIRCgATIFCCEQqwI6CAgAEIAEELADSgQIQRgBUOvDAVjrwwFg894BaANwAHgAgAHyAYgB8gGSAQMyLTGYAQCgAQKgAQHIAQHAAQE&sclient=gws-wiz&ved=0ahUKEwjW3ILE5PfzAhXaVs0KHfGkBKEQ4dUDCA4#lrd=0x883e808771a44aa7:0x769d0e746c737a97,3,,," role="button">Write a Review</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="row carouselSlideItem fade" *ngFor="let carouselSlide of carouselGoogleReviewsToDisplay; index as i;" [ngClass]="{'carouselSlide-active': selectedIndexGoogleReviews === paginatorObjectGoogleReviews.displayedPages[i]}">
+        <a class="carouselSlideItemLink" (click)="aTagPreventDGoogleReview($event)">
+          <div class="carouselSlideContentHolder">
+            <div class="carouselSlideUserImageHolder">
+              <img class="carouselSlideUserImage" src="{{carouselSlide.byImage}}" alt="A Thumbnail picture of the user {{carouselSlide.writtenBy}} was not available.">
+            </div>
+            <div class="col carouselSlideContentItemHolder carouselSlideContentItemHolderReviews">
+              <h5 class="carouselSlideContentItem">{{carouselSlide.writtenBy}}</h5>
+              <ngb-rating class="carouselSlideContentItem" [rate]="carouselGoogleReviewsRatingToDisplay[i]" [readonly]="readonly" [max]="max"></ngb-rating>
+              <p class="carouselSlideContentItem">{{carouselSlide.byDate}}, {{carouselSlide.likes}} Likes</p>
+              <p class="carouselSlideContentItem">{{carouselSlide.byContribute}} on Google</p>
+            </div>
+            <!-- <p class="carouselSlideContentItem">{{carouselSlide.byDate}}</p> -->
+          </div>
+          <p class="row carouselSlideItemLinkResponse" [ngClass]="{'carouselSlideItemLinkP' : !isCarouselReviewReadMore}">{{carouselSlide.content}}</p>
+          <!-- <p class="row carouselSlideItemLinkResponse" *ngIf="isCarouselReviewReadMore">{{carouselSlide.oResponse}}</p> -->
+          <!-- <p class="row carouselSlideItemLinkResponse">{{carouselSlide.oRDate}}</p> -->
+        </a>
+        <a class="carouselSlideItemLinkResponseButton" *ngIf="!isCarouselShowReadMore" (click)="aboutToggleIsCarouselReviewReadMore()">{{!isCarouselReviewReadMore ? 'Read More...' : 'Read Less...'}}</a>
+      </div>
+    </div>
+    <div *ngIf="carouselGoogleReviewsIndicators" class="carouselDotContainer">
+      <span
+        *ngFor="let carouselDot of paginatorObjectGoogleReviews.displayedPages; let i = index"
+        class="carouselDot"
+        [ngClass]="{'active': selectedIndexGoogleReviews === paginatorObjectGoogleReviews.displayedPages[i]}"
+        (click)="selectCarouselSlideGoogleReviews(paginatorObjectGoogleReviews.displayedPages[i])"
+      ></span>
+    </div>
+    <div class="buttonCarousel buttonPrev" (click)="onPrevClickGoogleReviews()">
+      <em class="iconCarousel iconCarouselPrev">&#10094;</em>
+    </div>
+    <div class="buttonCarousel buttonNext" (click)="onNextClickGoogleReviews()">
+      <em class="iconCarousel iconCarouselNext">&#10095;</em>
+    </div>
+  </div>
+  <div *ngIf="carouselOnsiteReviewsToDisplay && carouselOnsiteReviewsToDisplay.length > 0" class="row carouselContainer">
+    <nav class="reviewNavBar">
+      <div class="reviewNavBarContainer">
+        <ul class="reviewNavBarMenu">
+          <li class="reviewNavBarItem"><a class="btn btn-primary reviewNavBarLinks" href="#testimonialsAll" routerLink="/home/reviews" role="button">All Onsite-Review</a></li>
+          <li class="reviewNavBarItem"><h3 id="reviewNavBarTitleOnsite" class="reviewNavBarTitle">On-Site Customer Testimonials</h3></li>
+          <li class="reviewNavBarItem"><a class="btn btn-primary reviewNavBarLinks" href="#testimonialsNew" routerLink="/home/review/new" role="button">Write Onsite-Review</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="row carouselSlideItem fade" *ngFor="let carouselSlide of carouselOnsiteReviewsToDisplay; index as i;" [ngClass]="{'carouselSlide-active': selectedIndexOnsiteReviews === paginatorObjectOnsiteReviews.displayedPages[i]}">
+        <div class="carouselSlideItemLink">
+          <div class="carouselSlideContentHolder">
+            <div class="carouselSlideUserImageHolder">
+              <img class="carouselSlideUserImage" src="{{carouselSlide.byImagePath}}" alt="A Thumbnail picture of the user {{carouselSlide.writtenBy}} was not available.">
+            </div>
+            <div class="col carouselSlideContentItemHolder">
+              <h5 class="carouselSlideContentItem">{{carouselSlide.writtenBy}}</h5>
+              <ngb-rating class="carouselSlideContentItem" [rate]="carouselOnsiteReviewsRatingToDisplay[i]" [readonly]="readonly" [max]="max"></ngb-rating>
+              <!-- <p class="carouselSlideContentItem">Site reviews doesn't track user reviews at other site domains.</p> -->
+              <p class="carouselSlideContentItem">{{carouselSlide.createdAt}}, {{carouselSlide.likes}} Likes</p>
+            </div>
+          </div>
+          <!-- <p>{{carouselSlide.createdAt}}</p> -->
+          <p class="row carouselSlideItemLinkResponse">{{carouselSlide.content}}</p>
+          <p class="row carouselSlideItemLinkResponse">{{carouselSlide.oResponse}}</p>
+          <p class="row carouselSlideItemLinkResponse" *ngIf="carouselSlide.oRDate !== 'Terry Dockery Investigations and Security Services has not yet responded to customer review.'">{{carouselSlide.oRDate}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="carouselOnsiteReviewsIndicators" class="carouselDotContainer">
+      <span
+        *ngFor="let carouselDot of paginatorObjectOnsiteReviews.displayedPages; let i = index"
+        class="carouselDot"
+        [ngClass]="{'active': selectedIndexOnsiteReviews === paginatorObjectOnsiteReviews.displayedPages[i]}"
+        (click)="selectCarouselSlideOnsiteReviews(paginatorObjectOnsiteReviews.displayedPages[i])"
+      ></span>
+    </div>
+    <div class="buttonCarousel buttonPrev" (click)="onPrevClickOnsiteReviews()">
+      <em class="iconCarousel iconCarouselPrev">&#10094;</em>
+    </div>
+    <div class="buttonCarousel buttonNext" (click)="onNextClickOnsiteReviews()">
+      <em class="iconCarousel iconCarouselNext">&#10095;</em>
+    </div>
+  </div>
+  <div *ngIf="carouselGooglePostsToDisplay && carouselGooglePostsToDisplay.length > 0" class="row carouselContainer">
+    <nav class="postNavBar">
+      <div class="postNavBarContainer">
+        <ul class="postNavBarMenu">
+          <li class="postNavBarItem"><h3 id="postNavBarTitleGoogle" class="postNavBarTitle">Terry Dockery Investigations and Security Google Posts</h3></li>
+          <!-- <li class="postNavBarItem"><a class="btn btn-primary postNavBarLinks" id="allPosts" href="https://www.google.com/search?q=terry+dockery+investigations+and+security+services&sxsrf=ALiCzsZomFyyYr50cPjwpHajVT0AVF1Xsw%3A1662594052988&source=hp&ei=BCwZY6mgOYWB0PEPubaskA8&iflsig=AJiK0e8AAAAAYxk6FHBBVLhP6EUTmcFR2s0_Sn1aumKT&oq=Ter&gs_lcp=Cgdnd3Mtd2l6EAMYADIECCMQJzIECCMQJzIFCC4QgAQyCwguEIAEELEDENQCMgsILhCABBDHARCvATIICC4QgAQQsQMyCAguEIAEELEDMgsILhCABBDHARCvATIFCAAQgAQyCwguEIAEEMcBEK8BOg4ILhCABBCxAxDHARDRAzoLCAAQgAQQsQMQgwE6EQguEIAEELEDEIMBEMcBENEDOggILhCxAxCDAToLCC4QgAQQxwEQ0QM6CAgAEIAEELEDOhEILhCABBCxAxDHARDRAxDUAjoLCC4QsQMQgwEQ1AI6CAgAELEDEIMBUABYrwNgqw9oAHAAeACAAXWIAbgCkgEDMi4xmAEAoAEB&sclient=gws-wiz#lpstate=pid:CIHM0ogKEICAgIDOm9a6KQ" role="button">All Posts</a></li> -->
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="row carouselSlideItem fade" *ngFor="let carouselSlide of carouselGooglePostsToDisplay; index as i;" [ngClass]="{'carouselSlide-active': selectedIndexGooglePosts === paginatorObjectGooglePosts.displayedPages[i]}">
+        <a class="carouselSlideItemLink" (click)="aTagPreventDGooglePost($event)">
+          <div class="carouselSlideContentHolder" id="carouselSlideContentHolderGooglePost">
+            <div class="carouselSlideUserImageHolder" id="carouselSlideUserImageHolderPosts">
+              <img class="carouselSlideUserImage" src="{{carouselSlide.byImage}}" alt="A Thumbnail picture of {{carouselSlide.writtenBy}} was not available.">
+              <div class="col carouselSlideContentItemHolder">
+                <h5 class="carouselSlideContentItem">{{carouselSlide.writtenBy}}</h5>
+                <p class="carouselSlideContentItem">{{carouselSlide.byDate}}</p>
+              </div>
+            </div>
+          </div>
+          <p class="row carouselSlideItemLinkResponse" [ngClass]="{'carouselSlideItemLinkP' : !isCarouselPostReadMore}">{{carouselSlide.content}}</p>
+          <!-- <p class="row carouselSlideItemLinkResponse" *ngIf="isCarouselPostReadMore">{{carouselSlide.contentImages}}</p> -->
+          <div class="row carouselSlideImages">
+            <img class="carouselSlideItemLinkResponse" *ngIf="isCarouselPostReadMore" src="{{carouselSlide.contentImages}}" alt="THis">
+          </div>
+        </a>
+        <a class="carouselSlideItemLinkResponseButton" *ngIf="!isCarouselShowReadMore" (click)="aboutToggleIsCarouselPostReadMore()">{{!isCarouselPostReadMore ? 'Read More...' : 'Read Less...'}}</a>
+        <button id="allPostsButton">
+          <a class="btn btn-primary" id="allPosts" href="https://www.google.com/search?q=terry+dockery+investigations+and+security+services&sxsrf=ALiCzsZomFyyYr50cPjwpHajVT0AVF1Xsw%3A1662594052988&source=hp&ei=BCwZY6mgOYWB0PEPubaskA8&iflsig=AJiK0e8AAAAAYxk6FHBBVLhP6EUTmcFR2s0_Sn1aumKT&oq=Ter&gs_lcp=Cgdnd3Mtd2l6EAMYADIECCMQJzIECCMQJzIFCC4QgAQyCwguEIAEELEDENQCMgsILhCABBDHARCvATIICC4QgAQQsQMyCAguEIAEELEDMgsILhCABBDHARCvATIFCAAQgAQyCwguEIAEEMcBEK8BOg4ILhCABBCxAxDHARDRAzoLCAAQgAQQsQMQgwE6EQguEIAEELEDEIMBEMcBENEDOggILhCxAxCDAToLCC4QgAQQxwEQ0QM6CAgAEIAEELEDOhEILhCABBCxAxDHARDRAxDUAjoLCC4QsQMQgwEQ1AI6CAgAELEDEIMBUABYrwNgqw9oAHAAeACAAXWIAbgCkgEDMi4xmAEAoAEB&sclient=gws-wiz#lpstate=pid:CIHM0ogKEICAgIDOm9a6KQ" role="button">All Posts</a>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="carouselGooglePostsIndicators" class="carouselDotContainer">
+      <span
+        *ngFor="let carouselDot of paginatorObjectGooglePosts.displayedPages; let i = index"
+        class="carouselDot"
+        [ngClass]="{'active': selectedIndexGooglePosts === paginatorObjectGooglePosts.displayedPages[i]}"
+        (click)="selectCarouselSlideGooglePosts(paginatorObjectGooglePosts.displayedPages[i])"
+      ></span>
+    </div>
+    <div class="buttonCarousel buttonPrev" [ngClass]="{'buttonCarouselP' : !isCarouselPostReadMore}" (click)="onPrevClickGooglePosts()">
+      <em class="iconCarousel iconCarouselPrev">&#10094;</em>
+    </div>
+    <div class="buttonCarousel buttonNext" [ngClass]="{'buttonCarouselP' : !isCarouselPostReadMore}" (click)="onNextClickGooglePosts()">
+      <em class="iconCarousel iconCarouselNext">&#10095;</em>
+    </div>
+  </div>
+  <div *ngIf="carouselOnsitePostsToDisplay && carouselOnsitePostsToDisplay.length > 0" class="row carouselContainer" id="carouselContainerOnsitePosts">
+    <nav class="postNavBar">
+      <div class="postNavBarContainer">
+        <ul class="postNavBarMenu">
+          <li class="postNavBarItem"><a class="btn btn-primary postNavBarLinks" href="#testimonialsAll" routerLink="/home/posts" role="button">All Onsite-Post</a></li>
+          <li class="postNavBarItem"><h3 id="postNavBarTitleOnsite" class="postNavBarTitle">On-Site Terry Dockery Investigations and Security Posts</h3></li>
+          <li class="postNavBarItem"><a class="btn btn-primary postNavBarLinks" href="https://www.google.com/search?q=terry+dockery+investigations+and+security+services&sxsrf=ALiCzsZomFyyYr50cPjwpHajVT0AVF1Xsw%3A1662594052988&source=hp&ei=BCwZY6mgOYWB0PEPubaskA8&iflsig=AJiK0e8AAAAAYxk6FHBBVLhP6EUTmcFR2s0_Sn1aumKT&oq=Ter&gs_lcp=Cgdnd3Mtd2l6EAMYADIECCMQJzIECCMQJzIFCC4QgAQyCwguEIAEELEDENQCMgsILhCABBDHARCvATIICC4QgAQQsQMyCAguEIAEELEDMgsILhCABBDHARCvATIFCAAQgAQyCwguEIAEEMcBEK8BOg4ILhCABBCxAxDHARDRAzoLCAAQgAQQsQMQgwE6EQguEIAEELEDEIMBEMcBENEDOggILhCxAxCDAToLCC4QgAQQxwEQ0QM6CAgAEIAEELEDOhEILhCABBCxAxDHARDRAxDUAjoLCC4QsQMQgwEQ1AI6CAgAELEDEIMBUABYrwNgqw9oAHAAeACAAXWIAbgCkgEDMi4xmAEAoAEB&sclient=gws-wiz#lpstate=pid:CIHM0ogKEICAgIDOm9a6KQ" role="button">All Google Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="row carouselSlideItem fade" *ngFor="let carouselSlide of carouselOnsitePostsToDisplay; index as i;" [ngClass]="{'carouselSlide-active': selectedIndexOnsitePosts === paginatorObjectOnsitePosts.displayedPages[i]}">
+        <div class="carouselSlideItemLink">
+          <div class="carouselSlideContentHolder" id="AltDisplayContentHolder">
+            <div class="carouselSlideUserImageHolder">
+              <img class="carouselSlideUserImage" src="{{carouselSlide.mainImagePath}}" alt="A Thumbnail picture of {{carouselSlide.writtenBy}} was not available.">
+              <div class="col carouselSlideContentItemHolder">
+                <h5 class="carouselSlideContentItem">{{carouselSlide.writtenBy}}</h5>
+                <p class="carouselSlideContentItem">{{carouselSlide.category}}</p>
+                <p class="carouselSlideContentItem">{{carouselSlide.createdAt}}, {{carouselSlide.likes}} Likes</p>
+              </div>
+            </div>
+          </div>
+          <p class="row carouselSlideItemLinkResponse">{{carouselSlide.content}}</p>
+          <div class="carouselSlideMediaHolder">
+            <div class="carouselSlideImages" *ngIf="carouselSlide.images && carouselSlide.images.length > 0">
+              <img *ngFor="let imageOnS of carouselSlide.images; index as i;" class="postFileSize" src="{{carouselSlide.imagesPaths[i]}}" alt="The posts image number: {{i}}, filename: {{imageOnS.filename}}.">
+            </div>
+            <div class="carouselSlideVideos" *ngIf="carouselSlide.videos && carouselSlide.videos.length > 0">
+              <video *ngFor="let videoOnS of carouselSlide.videos; index as i;" class="postFileSize" controls>
+                <source src="{{carouselSlide.videosPaths[i]}}" type="{{videoOnS.contentType}}"/>
+              </video>
+            </div>
+            <div class="carouselSlideLogo" *ngIf="carouselSlide.images.length <= 0 && carouselSlide.videos.length <= 0">
+              <img src="../../assets/images/Logo.jpg" class="onsitePostLogoPicture" alt="Terry Dockery Private Investigator Business Logo.">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="carouselOnsitePostsIndicators" class="carouselDotContainer">
+      <span
+        *ngFor="let carouselDot of paginatorObjectOnsitePosts.displayedPages; let i = index"
+        class="carouselDot"
+        [ngClass]="{'active': selectedIndexOnsitePosts === paginatorObjectOnsitePosts.displayedPages[i]}"
+        (click)="selectCarouselSlideOnsitePosts(paginatorObjectOnsitePosts.displayedPages[i])"
+      ></span>
+    </div>
+    <div class="buttonCarousel buttonPrev" (click)="onPrevClickOnsitePosts()">
+      <em class="iconCarousel iconCarouselPrev">&#10094;</em>
+    </div>
+    <div class="buttonCarousel buttonNext" (click)="onNextClickOnsitePosts()">
+      <em class="iconCarousel iconCarouselNext">&#10095;</em>
+    </div>
+  </div>
+</section>

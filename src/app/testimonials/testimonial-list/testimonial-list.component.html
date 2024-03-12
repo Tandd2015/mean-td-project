@@ -1,0 +1,18 @@
+<section>
+  <div *ngIf='reviewsMixedListErrors.length' class="row reviewsMixedListErrorContainer">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of reviewsMixedListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-carousel
+    *ngIf="reviewsGoogle && reviewsGoogle.length > 0"
+    [carouselGoogleReviews]="reviewsGoogle"
+    [carouselGoogleReviewsRating]="reviewRating"
+    [carouselGoogleReviewsAutoSlide]="autoSlideReviewStopperGoogle"
+    (mouseover)="stopAutoSlideReviewGoogle()"
+    (mouseout)="startAutoSlideReviewGoogle()"
+  ></app-carousel>
+</section>
+<!-- <app-testimonial-edit *ngIf="selectedReviewOnS !== null" [reviewAppEdit]="selectedReviewOnS"></app-testimonial-edit> -->
+<!-- <app-testimonial-edit *ngIf="selectedReviewOnS !== null"></app-testimonial-edit> -->
+

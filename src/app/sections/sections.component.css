@@ -1,0 +1,187 @@
+p, h5, h1 {
+  background: white;
+}
+.sectionsHolder {
+  display: flex;
+  text-align: center;
+  padding: 2rem 1rem 2rem 2rem;
+}
+
+.sectionsHolder .ContactUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionsHolder .ContactUs .sectionsC {
+  width: max-content;
+}
+
+.sectionsHolder .AvailableServices #servicesA {
+  background: transparent;
+  display: grid;
+  justify-content: center;
+}
+
+.sectionsHolder .AvailableServices #servicesA .sections {
+  width: inherit;
+  justify-content: center;
+}
+
+.sectionsHolder .AvailableServices #servicesA .sections p {
+  width: max-content;
+}
+
+.sectionsHolder .AboutCompany {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionsHolder .contactButtonsHolder {
+  margin-top: 1rem;
+  padding: 0rem 2.25rem 0rem 2.5rem;
+}
+
+.sectionsHolder .contactButtonsHolder .contactButtons {
+  margin-right: 0.5rem;
+}
+
+.sectionsHolder .contactButtonsHolder .contactButtonsCall {
+  margin-right: 0rem;
+}
+
+.sectionsHolder .AboutCompany .AboutCompanyContent {
+  width: 50%;
+}
+
+.sectionsHolder .AvailableServices .readMoreButtonHolder .readMoreButtonHolderTitle {
+  justify-content: center;
+}
+.sectionsHolder .AvailableServices .readMoreButtonHolder button {
+  margin: 0rem 0.5rem;
+}
+
+@media only screen and (max-width: 1221px) {
+  .sectionsHolder .AboutCompany .AboutCompanyContent {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  h1 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  p, h5 {
+    font-size: 0.75rem;
+  }
+
+  button {
+    font-size: 0.75rem;
+  }
+
+  .sectionsHolder {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .sectionsHolder .contactButtonsHolder {
+    padding: 0rem 2.25rem 0rem 3.5rem;
+  }
+  /* .sectionsHolder {
+    flex-direction: column;
+  }
+
+  .sectionsHolder .AboutCompany, .sectionsHolder .ContactUs, .sectionsHolder .AvailableServices {
+    margin-bottom: 5rem;
+  } */
+}
+
+@media only screen and (max-width: 918px) {
+  .sectionsHolder .AvailableServices .readMoreButtonHolder button {
+    margin: 0rem 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 739px) {
+  .sectionsHolder {
+    gap: 2rem;
+  }
+
+  .sectionsHolder .AboutCompany {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  .sectionsHolder {
+    gap: normal;
+  }
+  .sectionsHolder .AboutCompany .AboutCompanyContent {
+    width: 92%;
+  }
+  .sectionsHolder .contactButtonsHolder {
+    padding: 0rem 1.5rem 0rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 591px) {
+  .sectionsHolder {
+    flex-direction: column;
+  }
+
+  .sectionsHolder .AvailableServices {
+    display: none;
+  }
+
+  .sectionsHolder .AboutCompany, .sectionsHolder .contactButtonsHolder, .sectionsHolder .AvailableServices {
+    margin-top: 4rem;
+  }
+
+  .sectionsHolder .contactButtonsHolder {
+    padding: 0rem 0.2rem 0rem 1.95rem;
+  }
+
+  .sectionsHolder .contactButtonsHolder .contactButtons {
+    margin-right: 0.2rem;
+  }
+
+  .sectionsHolder .AboutCompany .AboutCompanyContent {
+    width: 98%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  p, h5, button {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 558px) {
+  /* .sectionsHolder .AvailableServices {
+    display: none;
+  } */
+/*
+  .sectionsHolder .contactButtonsHolder {
+    padding: 0rem 0rem 0rem 1.5rem;
+  } */
+
+  /* h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  p, h5, button {
+    font-size: 1rem;
+  } */
+}
+
+@media only screen and (max-width: 360px) {
+  .sectionsHolder .ContactUs .sectionsC {
+    width: 100%;
+  }
+}

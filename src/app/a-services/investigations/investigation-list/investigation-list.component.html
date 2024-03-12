@@ -1,0 +1,51 @@
+<div class="row" id="investigationsListsSection">
+  <div *ngIf='investigationsListErrors.length' class="col" id="investigationErrors">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of investigationsListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-nav [selectedNavSection]="investigation"></app-nav>
+  <div class="col" id="investigationsTitles">
+    <ul
+      class="row"
+      id="investigationsTitlesTable"
+    >
+      <li *ngFor="let investigationTitle of investigations;" class="investigationsListItem">
+        <a *ngIf="investigationTitle.title!=='Investigations Home'" [routerLink]="['/home/investigation/details', investigationTitle._id]" >{{investigationTitle.title}}</a>
+        <a *ngIf="investigationTitle.title==='Investigations Home'" routerLink="/home/investigations" >{{investigationTitle.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col" id="investigationHome">
+    <section class="row">
+      <fieldset>
+        <div class="row">
+          <legend class="">Terry Dockery Investigations and Security Services</legend>
+          <img class="investigationImage" src="{{investigation?.sectionImagePath}}" alt="The picture {{investigation?.sectionImage?.filename}} of {{investigation?.title}} was not available.">
+          <p class="">{{investigation?.content}}</p>
+        </div>
+      </fieldset>
+    </section>
+  </div>
+  <div class="col-3 col-lg-4" id="investigations">
+    <h1>Available Services Summary</h1>
+    <div class="investigationsTableHolder">
+      <ul
+        class="col investigations"
+        *ngFor="let investigationList of investigations; let i = index;"
+        [ngClass]="{'investigationsExtender' : !investigationsReadMore, 'disappear': i>=5 && !investigationsReadMore}"
+      >
+        <li class="investigationsListItem">
+          <div *ngIf="investigationList.title!=='Investigations Home'" hidden scope="row">{{ investigationList._id }}</div>
+          <h4 *ngIf="investigationList.title!=='Investigations Home'">{{investigationList.title}}</h4>
+          <img *ngIf="investigationList.title!=='Investigations Home'" class="investigationImage" src="{{investigationList.sectionImagePath}}" alt="The picture {{investigationList.sectionImage.filename}} of {{investigationList.title}} was not available.">
+          <p *ngIf="investigationList.title!=='Investigations Home'">Terry Dockery Investigations & Security Services provides {{investigationList.title}}.</p>
+          <button *ngIf="investigationList.title!=='Investigations Home'" class="btn btn-primary"  [routerLink]="['/home/investigation/details', investigationList._id]">Read More</button>
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary showMore" (click)="aboutToggleInvestigationsReadMore()">{{!investigationsReadMore ? 'Show More' : 'Show Less'}}</button>
+  </div>
+</div>
+<app-contact></app-contact>
+

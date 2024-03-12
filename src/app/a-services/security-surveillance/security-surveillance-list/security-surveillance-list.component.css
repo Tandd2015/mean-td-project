@@ -1,0 +1,395 @@
+app-nav {
+  display: none;
+}
+
+ul li img.securityImage, ul li img.surveillanceImage {
+  height: 15rem;
+  width: 15rem;
+}
+
+div#securitySurveillance h1, div#securitySurveillanceHome section fieldset div p, div#securitySurveillanceHome section fieldset div legend, div#securitySurveillance ul li h4, div#securitySurveillance ul li p {
+  background-color: white;
+}
+
+img.securitySurveillanceImage {
+  height: 30rem;
+  width: 30rem;
+  margin-bottom: 3rem;
+}
+
+div#securitySurveillanceHome section fieldset div p {
+  text-align: center;
+  white-space: pre-line;
+}
+
+div#securitySurveillanceTitles {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+}
+
+div#securitySurveillanceTitles ul#securitySurveillanceTitlesTable {
+  position: sticky;
+  top: 36%;
+}
+
+div#securitySurveillanceListsSection, app-contact {
+  position: relative;
+}
+
+div#securitySurveillanceListsSection {
+  width: 100%;
+  padding-top: 9rem;
+}
+
+div#securitySurveillance {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+div#securitySurveillance ul, div#securitySurveillance h1, div#securitySurveillanceHome section fieldset div legend {
+  margin-bottom: 2rem;
+}
+
+div#securitySurveillance ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#securitySurveillance ul li p {
+  width: 15rem;
+}
+
+div#securitySurveillanceTitles ul, div#securitySurveillance ul {
+  list-style: none;
+}
+
+div#securitySurveillanceTitles ul li {
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+div#securitySurveillanceTitles ul li a {
+  text-decoration: none;
+  background-color: white;
+  font-size: 2rem;
+}
+
+div#securitySurveillanceListsSection app-nav {
+  margin-bottom: 6rem;
+}
+
+legend, h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+legend {
+  padding: 0;
+}
+
+div#securitySurveillanceHome section.row fieldset div.row {
+  justify-content: center;
+}
+
+@media only screen and (min-width: 2478px) {
+  div#securitySurveillanceTitles ul li a {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 2022px) {
+  div#securitySurveillanceTitles ul li a {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  div#securitySurveillanceTitles ul li a {
+    font-size: 1.25rem;
+  }
+  legend, h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1390px) {
+  legend, h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 1246px) {
+  div#securitySurveillanceTitles {
+    width: 28%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  img.securitySurveillanceImage {
+    height: 23rem;
+    width: 23rem;
+  }
+
+  div#securitySurveillanceHome section fieldset div p {
+    width: 28rem;
+  }
+
+  ul li img.securityImage, ul li img.surveillanceImage {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  div#securitySurveillance ul {
+    padding-left: 0rem;
+  }
+
+  div#securitySurveillance {
+    width: 31%;
+  }
+
+  div#securitySurveillanceHome {
+    width: 36%;
+  }
+
+  div#securitySurveillanceTitles {
+    width: 33%;
+  }
+
+  div#securitySurveillanceTitles ul#securitySurveillanceTitlesTable {
+    padding: 0;
+  }
+
+  legend, h1 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.35rem;
+  }
+
+}
+
+@media only screen and (max-width: 970px) {
+  legend {
+    font-size: 1.4rem;
+  }
+
+  img.securitySurveillanceImage {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  div#securitySurveillance h1 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  ul li img.securityImage, ul li img.surveillanceImage {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  div#securitySurveillance ul li p {
+    width: 12rem;
+    font-size: 0.9rem;
+  }
+
+  div#securitySurveillanceListsSection {
+    margin: 0;
+  }
+
+  div#securitySurveillanceHome {
+    width: 33%;
+  }
+
+  div#securitySurveillanceTitles {
+    width: 35%;
+  }
+
+  div#securitySurveillance {
+    width: 30%;
+  }
+}
+
+
+@media only screen and (max-width: 837px) {
+  /* div#securitySurveillanceListsSection {
+    margin: 0;
+  }
+
+  div#securitySurveillanceHome {
+    width: 33%;
+  }
+
+  div#securitySurveillanceTitles {
+    width: 35%;
+  } */
+
+  legend {
+    font-size: 1.2rem;
+  }
+
+  div#securitySurveillance h1 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+  }
+
+  div#securitySurveillance ul li p {
+    width: 10rem;
+    font-size: 0.75rem;
+  }
+
+  ul li img.securityImage, ul li img.surveillanceImage {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  div#securitySurveillance {
+    width: 21%;
+    padding: 0;
+  }
+
+  button.btn-primary {
+    font-size: 0.75rem;
+  }
+
+  div#securitySurveillanceTitles ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media only screen and (max-width: 724px) {
+  div#securitySurveillance {
+    width: 100%;
+    display: inline-block;
+  }
+
+  div#securitySurveillance ul {
+    display: inline-flex;
+    padding: 0rem 4rem;
+  }
+
+  div#securitySurveillanceTitles {
+    width: 40%;
+  }
+
+  div#securitySurveillance h1 {
+    font-size: 2rem;
+  }
+
+  legend {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 672px) {
+  div#securitySurveillanceTitles ul li a {
+    font-size: 0.99rem;
+  }
+
+  div#securitySurveillance ul {
+    padding: 0rem 2rem;
+  }
+
+  div#securitySurveillance h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  div#securitySurveillanceTitles, app-nav {
+    display: none;
+  }
+
+  legend {
+    font-size: 2rem;
+  }
+
+  div#securitySurveillance ul {
+    padding: 0rem 1rem;
+  }
+
+  div#securitySurveillanceHome {
+    margin-top: 9rem;
+  }
+
+  div#securitySurveillanceListsSection {
+    padding-top: 0rem;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  legend {
+    font-size: 1.85rem;
+  }
+
+  h4 {
+    font-size: 0.839rem;
+  }
+
+  div#securitySurveillance ul {
+    padding: 0rem 0.25rem;
+  }
+
+  div#securitySurveillance h1 {
+    font-size: 1.5rem;
+  }
+
+  :host ::ng-deep app-contact div#contactEndHolderCell {
+    width: 109%;
+  }
+
+  :host ::ng-deep app-contact div#contactEndHolder {
+    width: 109%;
+  }
+
+  /* div#contactEndHolderCell {
+    display: grid;
+    width: 105%;
+  } */
+
+  /* div#contactEndHolder {
+    width: 109%;
+  } */
+
+}
+
+@media screen and (max-width: 390px) {
+  div#securitySurveillance {
+    display: flex;
+  }
+
+  div#securitySurveillance ul li p {
+    width: 13rem;
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  ul li img.securityImage, ul li img.surveillanceImage {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  /* div#securitySurveillanceListsSection {
+    padding-left: 1rem;
+  } */
+}
+
+@media only screen and (max-width: 219px) {
+  div#securitySurveillance ul li p {
+    width: 10rem;
+  }
+}

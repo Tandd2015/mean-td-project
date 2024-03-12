@@ -1,0 +1,241 @@
+section#selectedInvestigation, app-contact {
+  position: relative;
+}
+
+app-nav {
+  display: none;
+}
+
+section#selectedInvestigation {
+  width: 100%;
+}
+
+div#investigationsDetailHolder {
+  display: flex;
+  /* justify-content: center; */
+}
+
+div#investigationsDetailTitles {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  text-align: center; */
+}
+
+ul#investigationsDetailTitlesTable {
+  position: sticky;
+  top: 16%;
+  list-style: none;
+}
+
+li.investigationsDetailListItem {
+  /* list-style: none; */
+  /* margin-bottom: 1.5%; */
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
+a.investigationsDetailListItemAtag {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+
+div#investigationsMainHolder {
+  width: 74%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+img.sInvestigationImage {
+  height: 30%;
+  width: 90%;
+  margin-bottom: 1.5%;
+}
+
+p.sInvestigationContent {
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: white;
+  text-align: center;
+  white-space: pre-line;
+  /* text-align: justify; */
+  font-size: 1.25vw;
+}
+
+h1.sInvestigationTitle {
+  margin-bottom: 1%;
+  width: 90%;
+  text-align: center;
+  background-color: white;
+  font-size: 5vw;
+  /* white-space: nowrap;
+  letter-spacing: -3px; */
+}
+
+button.sInvestigationButton {
+  margin-bottom: 3%;
+}
+
+
+/* @media only screen and (min-width: 3012px) {
+  h1.sInvestigationTitle {
+    white-space: normal;
+  }
+} */
+@media only screen and (min-width: 2478px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 2022px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 1390px) {
+}
+
+@media only screen and (max-width: 1246px) {
+  div#investigationsDetailTitles {
+    width: 28%;
+  }
+  div#investigationsMainHolder {
+    width: 72%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  div#investigationsDetailTitles {
+    width: 33%;
+    padding: 0;
+  }
+  div#investigationsMainHolder {
+    width: 67%;
+    /* margin-top: 4rem; */
+  }
+  p.sInvestigationContent {
+    font-size: 1.75vw;
+  }
+  ul#investigationsDetailTitlesTable {
+    position: sticky;
+    top: 9%;
+    list-style: none;
+  }
+  /* h1#sInvestigationTitleID {
+    letter-spacing: 0px;
+  } */
+  h1.sInvestigationTitle {
+    /* white-space: nowrap;
+    letter-spacing: 0px; */
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  div#selectedInvestigation {
+    margin: 0;
+  }
+  div#investigationsDetailTitles {
+    width: 35%;
+  }
+  div#investigationsMainHolder {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 837px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 724px) {
+  div#investigationsDetailTitles {
+    width: 40%;
+  }
+  div#investigationsMainHolder {
+    width: 60%;
+  }
+  p.sInvestigationContent {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 672px) {
+  a.investigationsDetailListItemAtag {
+    font-size: 0.99rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  div#investigationsDetailTitles {
+    display: none;
+  }
+  div#investigationsMainHolder {
+    width: 98%;
+  }
+  h1.sInvestigationTitle {
+    font-size: 7.5vw;
+  }
+  p.sInvestigationContent {
+    font-size: 3.5vw;
+  }
+  div#investigationsDetailHolder {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+
+  :host ::ng-deep app-contact div#contactEndHolderCell {
+    width: 109%;
+  }
+
+  :host ::ng-deep app-contact div#contactEndHolder {
+    width: 109%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1.sInvestigationTitle {
+    font-size: 8.5vw;
+  }
+  p.sInvestigationContent {
+    font-size: 3.75vw;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  h1.sInvestigationTitle {
+    font-size: 9.5vw;
+  }
+  p.sInvestigationContent {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  h1.sInvestigationTitle {
+    font-size: 1.85rem;
+  }
+  p.sInvestigationContent {
+    font-size: 1rem;
+  }
+}

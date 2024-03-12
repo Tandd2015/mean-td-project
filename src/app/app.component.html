@@ -1,0 +1,5 @@
+<div [ngClass]="[!actTwo ? 'navBarContainer first-active': 'navBarContainer']">
+  <app-nav-bar (newActOne)="addAct($event)"></app-nav-bar>
+</div>
+<router-outlet id="particles-js"></router-outlet>
+<app-u-cookie></app-u-cookie>

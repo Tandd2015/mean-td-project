@@ -1,0 +1,280 @@
+h1 {
+  background: -moz-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #FEDB37 0%,
+    #FDB931 8%,
+    #9f7928 30%,
+    #8A6E2F 40%,
+    transparent 80%
+  ),
+  -moz-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #FFFFAC 8%,
+    #D1B464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background: -webkit-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #FEDB37 0%,
+    #FDB931 8%,
+    #9f7928 30%,
+    #8A6E2F 40%,
+    transparent 80%
+  ),
+  -webkit-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #FFFFAC 8%,
+    #D1B464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background: -o-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #FEDB37 0%,
+    #FDB931 8%,
+    #9f7928 30%,
+    #8A6E2F 40%,
+    transparent 80%
+  ),
+  -o-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #FFFFAC 8%,
+    #D1B464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background: radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #FEDB37 0%,
+    #FDB931 8%,
+    #9f7928 30%,
+    #8A6E2F 40%,
+    transparent 80%
+  ),
+  radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #FFFFAC 8%,
+    #D1B464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+h4 {
+  background: -moz-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    rgb(229, 231, 235) 0%,
+    rgb(156, 163, 175) 8%,
+    rgb(75, 85, 99) 30%,
+    rgb(229, 231, 235) 40%,
+    transparent 80%
+  ),
+  -moz-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #454545 8%,
+    rgb(243, 244, 246) 25%,
+    rgb(17, 24, 39) 62.5%,
+    #FFFFFF 100%
+  );
+  background: -webkit-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    rgb(229, 231, 235) 0%,
+    rgb(156, 163, 175) 8%,
+    rgb(75, 85, 99) 30%,
+    rgb(229, 231, 235) 40%,
+    transparent 80%
+  ),
+  -webkit-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #454545 8%,
+    rgb(243, 244, 246) 25%,
+    rgb(17, 24, 39) 62.5%,
+    #FFFFFF 100%
+  );
+  background: -o-radial-gradient(
+    ellipse farthest-corner at right bottom,
+    rgb(229, 231, 235) 0%,
+    rgb(156, 163, 175) 8%,
+    rgb(75, 85, 99) 30%,
+    rgb(229, 231, 235) 40%,
+    transparent 80%
+  ),
+  -o-radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #454545 8%,
+    rgb(243, 244, 246) 25%,
+    rgb(17, 24, 39) 62.5%,
+    #FFFFFF 100%
+  );
+  background: radial-gradient(
+    ellipse farthest-corner at right bottom,
+    rgb(229, 231, 235) 0%,
+    rgb(156, 163, 175) 8%,
+    rgb(75, 85, 99) 30%,
+    rgb(229, 231, 235) 40%,
+    transparent 80%
+  ),
+  radial-gradient(
+    ellipse farthest-corner at left top,
+    #FFFFFF 0%,
+    #454545 8%,
+    rgb(243, 244, 246) 25%,
+    rgb(17, 24, 39) 62.5%,
+    #FFFFFF 100%
+  );
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+}
+
+.carousel-image-wrapper {
+  height: 50rem;
+  width: 100%;
+}
+
+.carousel-image {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  background: black;
+  border-radius: 18px;
+  border: 3px solid darkgoldenrod;
+  padding-top: 0.25rem;
+  padding-bottom: 0rem;
+  right: 10%;
+  left: 10%;
+  bottom: .1rem;
+
+}
+
+@media only screen and (min-width: 2258px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 2030px) and (max-width: 2258px) {
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1719px) and (max-width: 2030px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media only screen and (min-width: 1450px) and (max-width: 1719px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  .carousel-image-wrapper {
+    height: 40rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .carousel-image-wrapper {
+    height: 30rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .carousel-image-wrapper {
+    height: 25rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  h4 {
+    font-size: 0.95rem;
+  }
+
+  .carousel-caption {
+    right: 3%;
+    left: 3%;
+  }
+
+}
+
+@media screen and (max-width: 440px) {
+  h4 {
+    margin-top: -0.5rem;
+    margin-bottom: -0.2rem;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .carousel-image-wrapper {
+    height: 23rem;
+  }
+}
+
+@media screen and (max-width: 214px) {
+  .carousel-image-wrapper {
+    height: 20rem;
+  }
+
+  h1 {
+    font-size: 0.75rem;
+  }
+
+  .carousel-caption {
+    right: 1.5%;
+    left: 1.5%;
+  }
+}

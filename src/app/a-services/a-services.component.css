@@ -1,0 +1,148 @@
+div#aServicesSection div#services {
+  display: inline-grid;
+  justify-content: flex-start;
+}
+
+div#aServicesSection div#services ul.sections {
+  list-style-type: none;
+  line-height: 0;
+  margin-bottom: 3rem;
+  background: white;
+}
+
+div#aServicesSection div#services h1 {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 5rem;
+  font-weight: bold;
+  background: white;
+}
+
+div#aServicesSection div#services ul#sizeSection {
+  display: none;
+  margin-bottom: 4.5rem;
+}
+
+div#aServicesSection div#services ul.sections li.readMoreButtonHolder {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 1566px) {
+  div#aServicesSection div#services h1{
+    font-size: 3rem;
+  }
+
+  div#aServicesSection div#services ul.sections {
+    margin-bottom: 1.5rem;
+  }
+
+  div#aServicesSection div#services ul.sections li.sectionsListItem h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  div#aServicesSection div#services h1{
+    font-size: 2rem;
+    text-align: left;
+
+  }
+
+  div#aServicesSection div#services ul.sections {
+    text-align: left;
+    padding-left: 3rem;
+  }
+
+  div#aServicesSection div#services ul.sections li.sectionsListItem h2 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 696px) {
+  div#aServicesSection div#services h1 {
+    padding-left: 0rem;
+    margin-left: -1rem;
+  }
+
+  div#aServicesSection div#services ul.sections {
+    padding-left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  div#aServicesSection div#services h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* @media only screen and (max-width: 558px) {
+  div#aServicesSection div#services h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 477px) {
+  div#aServicesSection div#services h1 {
+    font-size: 1.3rem;
+  }
+} */
+
+@media screen and (max-width: 558px) {
+  div#aServicesSection div#services {
+    justify-content: center;
+  }
+
+  div#aServicesSection div#services h1 {
+    margin-left: 0rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  div#aServicesSection div#services ul.sections {
+    text-align: center;
+  }
+
+  div#aServicesSection div#services ul#sizeSection {
+    display: flex;
+  }
+
+  div#aServicesSection div#services ul.sections li.sectionsListItem h2 {
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  div#contactEndHolderCell {
+    display: grid;
+    width: 105%;
+  }
+
+  div#contactEndHolder {
+    width: 109%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  div#aServicesSection div#services h1 {
+    font-size: 1.75rem;
+  }
+  div#aServicesSection div#services ul.sections li.sectionsListItem h2 {
+    font-weight: normal;
+  }
+  div#aServicesSection div#services ul.sections li.readMoreButtonHolder button {
+    margin-right: 2rem;
+  }
+  div#aServicesSection div#services ul.sections li.readMoreButtonHolder {
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  div#aServicesSection div#services ul.sections li.readMoreButtonHolder button {
+    margin-right: 1.25rem;
+  }
+  div#aServicesSection div#services ul.sections li.readMoreButtonHolder {
+    margin-left: 0.75rem;
+  }
+}

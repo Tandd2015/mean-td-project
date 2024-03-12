@@ -1,0 +1,30 @@
+<section id="selectedSecuritySurveillance">
+  <div *ngIf='selectedSecuritySurveillanceErrors.length' class="row">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of selectedSecuritySurveillanceErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-nav [selectedNavSection]="securitySurveillanceD"></app-nav>
+  <div class="row" id="securitySurveillanceDetailHolder">
+    <div class="" id="securitySurveillanceDetailTitles">
+      <ul class="row" id="securitySurveillanceDetailTitlesTable">
+        <li class="securitySurveillanceDetailListItem">
+          <a class="securitySurveillanceDetailListItemAtag" routerLink="/home/security-surveillance">{{securitySurveillanceDetail.title}}</a>
+        </li>
+        <li *ngFor="let securityDTitle of securityDetail;" class="securitySurveillanceDetailListItem">
+          <a class="securitySurveillanceDetailListItemAtag" [routerLink]="['/home/security/details', securityDTitle._id]" >{{securityDTitle.title}}</a>
+        </li>
+        <li *ngFor="let surveillanceDTitle of surveillanceDetail;" class="securitySurveillanceDetailListItem">
+          <a class="securitySurveillanceDetailListItemAtag" [routerLink]="['/home/surveillance/details', surveillanceDTitle._id]" >{{surveillanceDTitle.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="" id="securitySurveillanceMainHolder">
+      <h1 class="sSecuritySurveillanceTitle">{{ securitySurveillance?.title }}</h1>
+      <img class="sSecuritySurveillanceImage" src="{{securitySurveillance?.sectionImagePath}}" alt="The picture {{securitySurveillance?.sectionImage?.filename}} of {{securitySurveillance?.title}} was not available.">
+      <p class="sSecuritySurveillanceContent" *ngFor="let secSurDCon of securitySurveillanceContentSplit">{{ secSurDCon }}</p>
+      <button class="btn btn-primary sSecuritySurveillanceButton" routerLink="/home/security-surveillance">Go Back</button>
+    </div>
+  </div>
+</section>
+<app-contact></app-contact>

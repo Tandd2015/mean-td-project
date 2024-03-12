@@ -1,0 +1,459 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+ngb-rating {
+  color: #FFC107;
+  font-size: 2rem;
+}
+
+.carouselContainer {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 2px 2px 12px 12px #0d81fd;
+  width: 98%;
+  padding-top: 1rem;
+  margin-bottom: 5rem;
+  background: linear-gradient(to top, #434343 50%, rgb(0, 0, 0) 100%);
+  opacity: 0.9;
+}
+
+#carouselContainerOnsitePosts {
+  height: max-content;
+}
+
+.carouselContainer .carousel .carouselSlideItem {
+  display: none;
+  /* opacity: 0.5; */
+}
+
+.carouselContainer .carousel {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.carouselContainer .carousel .carouselSlideItem.carouselSlide-active.AltDisplaySetItem {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+
+}
+
+.carouselContainer .carousel .carouselSlideItem.carouselSlide-active {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+}
+
+.carouselContainer .carousel .carouselSlideItem .AltDisplaySetLink {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carouselContainer .carousel .carouselSlideItem a.carouselSlideItemLink {
+  text-decoration: none;
+}
+.carouselContainer .carousel .carouselSlideItem a.carouselSlideItemLink {
+  text-decoration: none;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideItemLinkResponse {
+  color: cornflowerblue;
+  font-size: 1rem;
+  justify-content: center;
+  /* word-break: break-all; */
+  word-wrap: anywhere;
+  overflow-wrap: anywhere;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideImages img.carouselSlideItemLinkResponse {
+  width: 25rem;
+  height: 25rem;
+  margin: 0.6rem 0.5rem
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder {
+  display: flex;
+  align-self: center;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder #AltDisplayUserImageHolder {
+  display: flex;
+  margin: 0 0 1rem 0;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideUserImage {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder {
+  display: flex;
+  width: max-content;
+  flex-direction: row;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink #AltDisplayContentHolder {
+  display: flex;
+  flex-direction: column;
+  width: initial;
+}
+
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink #carouselSlideContentHolderGooglePost {
+  display: flex;
+  width: initial;
+  flex-direction: column;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder,
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0rem 0rem 1rem;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder  .carouselSlideUserImageHolder .carouselSlideContentItemHolder {
+  justify-content: center;
+  align-items: center;
+}
+/* .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .AltDisplaySetItemHolder,
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .AltDisplaySetItemHolder {
+  display: flex;
+  flex-direction: column;
+} */
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder .carouselSlideContentItem,
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder .carouselSlideContentItem {
+  display: flex;
+  width: max-content;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder h5.carouselSlideContentItem,
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder h5.carouselSlideContentItem {
+  margin-bottom: 0rem;
+  font-weight: bold;
+  color: #0d81fd;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder p.carouselSlideContentItem,
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder p.carouselSlideContentItem {
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+  color: dimgrey;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideMediaHolder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideMediaHolder .carouselSlideImages,
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideImages {
+  display: flex;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideImages {
+  justify-content: center;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideMediaHolder .carouselSlideVideos {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideMediaHolder .carouselSlideLogo {
+  background: #0d81fd;
+  background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,161,255,1) 43%, rgba(13,129,253,1) 100%);
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideMediaHolder .carouselSlideLogo .onsitePostLogoPicture {
+  height: 21.9rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.postFileSize {
+  height: 20rem;
+  width: 20rem;
+  object-fit: fill;
+  margin-left: 1rem;
+}
+
+.carouselDotContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.carouselDotContainer .carouselDot {
+  cursor: pointer;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: 0 0.5rem;
+  background-color: #0d81fd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: opacity 0.6s ease;
+  opacity: 0.5;
+}
+
+.carouselDotContainer .active,
+.carouselDotContainer .carouselDot:hover {
+  opacity: 1;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.fade:not(.show) {
+  opacity: 1;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carouselContainer .buttonCarousel {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  width: 10%;
+  align-self: center;
+}
+
+.carouselContainer .buttonPrev {
+  left: 3rem;
+}
+
+.carouselContainer .buttonNext {
+  right: 3rem;
+}
+.carouselContainer .buttonCarousel .iconCarousel {
+  background-color: #0d81fd;
+  color: white;
+  border-radius: 50%;
+  transition: opacity 0.15s ease;
+  opacity: 0.5;
+}
+
+.carouselContainer .buttonCarousel .iconCarousel.active {
+  opacity: 0.5;
+}
+
+.carouselContainer .buttonCarousel .iconCarousel:hover {
+  opacity: 1;
+}
+
+.carouselContainer .buttonCarousel .iconCarouselPrev {
+  padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+}
+
+.carouselContainer .buttonCarousel .iconCarouselNext {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+div.carouselContainer h3.postNavBarTitle, div.carouselContainer h3.reviewNavBarTitle {
+  text-align: center;
+  color: ivory;
+}
+
+div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu, div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu {
+  list-style-type: none;
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0rem 2rem 0rem 2.15rem;
+}
+
+div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu {
+  flex-direction: column;
+}
+
+/* div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu li.postNavBarItem a#allPosts {
+  width: 75%;
+} */
+
+div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu li.postNavBarItem h3.postNavBarTitle,
+div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu li.reviewNavBarItem h3.reviewNavBarTitle {
+  font-weight: bold;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideItemLinkP {
+  height: 3.3rem;
+  overflow: hidden;
+}
+
+.carouselContainer .carousel .carouselSlideItem .carouselSlideItemLinkResponseButton {
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.carouselContainer .carousel .carouselSlideItem #allPostsButton {
+  margin-bottom: 1.3rem;
+  background: transparent;
+  border-color: transparent;
+}
+
+.carouselContainer .carousel .carouselSlideItem #allPostsButton #allPosts {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media only screen and (max-width: 1566px) {
+  ngb-rating {
+    font-size: 1rem;
+  }
+
+  .carouselContainer {
+    margin-bottom: 2.5rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink p {
+    font-size: 0.75rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideImages img.carouselSlideItemLinkResponse {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideUserImage {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideVideos {
+    margin-bottom: 1rem;
+  }
+
+  .postFileSize {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .carouselDotContainer .carouselDot {
+    cursor: pointer;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0 0.25rem;
+  }
+
+  .carouselContainer .buttonCarousel {
+    font-size: 1rem;
+  }
+
+  .carouselContainer .buttonCarousel .iconCarouselPrev {
+    padding: 0.25rem 0.55rem 0.25rem 0.25rem;
+  }
+
+  .carouselContainer .buttonCarousel .iconCarouselNext {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  }
+
+  .carouselContainer .buttonPrev {
+    left: 3rem;
+  }
+
+  .carouselContainer .buttonNext {
+    right: 3rem;
+  }
+
+  div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu, div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu {
+    padding: 0rem 2rem 0rem 2.15rem;
+  }
+
+  div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu li.postNavBarItem a.postNavBarLinks,
+  div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu li.reviewNavBarItem a.reviewNavBarLinks {
+    font-size: 0.75rem;
+  }
+
+  div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu li.postNavBarItem h3.postNavBarTitle,
+  div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu li.reviewNavBarItem h3.reviewNavBarTitle {
+    font-size: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 560px) {
+  div.carouselContainer nav.postNavBar div.postNavBarContainer ul.postNavBarMenu, div.carouselContainer nav.reviewNavBar div.reviewNavBarContainer ul.reviewNavBarMenu {
+    padding: 0rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideUserImage {
+    height: 4rem;
+    width: 4rem;
+  }
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder h5.carouselSlideContentItem, .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder h5.carouselSlideContentItem {
+    font-size: 1rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder {
+    flex-direction: column;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideUserImageHolder .carouselSlideContentItemHolder, .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolder {
+    padding: 0rem 0rem 0rem 0rem;
+    align-items: center;
+  }
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder #carouselSlideUserImageHolderPosts {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.9rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideImages img.carouselSlideItemLinkResponse {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideContentHolder .carouselSlideContentItemHolderReviews {
+    margin-bottom: 1rem;
+  }
+
+  .carouselContainer .carousel .carouselSlideItem .carouselSlideItemLink .carouselSlideItemLinkP  {
+    height: 3.3rem;
+    overflow: hidden;
+  }
+
+  .carouselContainer .buttonCarouselP {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+}

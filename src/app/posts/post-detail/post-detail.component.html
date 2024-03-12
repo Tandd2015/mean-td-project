@@ -1,0 +1,141 @@
+<section class="selectedPost">
+  <fieldset>
+    <div *ngIf='selectedPostEditErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of selectedPostEditErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <legend class="">Post Details</legend>
+        <div class="row">
+          <p class="col">Post Id: </p>
+          <p class="col">{{ postOnSDl?._id }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Post Content: </p>
+          <p class="col">{{ postOnSDl?.content }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Post Category: </p>
+          <p class="col">{{ postOnSDl?.category }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Post Username: </p>
+          <p class="col">{{ postOnSDl?.writtenBy }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Post Likes: </p>
+          <p class="col">{{ postOnSDl?.likes }}</p>
+        </div>
+        <div class="row">
+          <p class="col">User Post Date: </p>
+          <p class="col">{{ postOnSDl?.createdAt }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Post Updated Date: </p>
+          <p class="col">{{ postOnSDl?.updatedAt }}</p>
+        </div>
+        <div class="row">
+          <p class="col">User Main Image: </p>
+          <p class="col"><img class="postOnSDlUserImage" src="{{postOnSDl?.mainImagePath}}" alt="The post owners user image."></p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Id: </p>
+          <p class="col">{{ postOnSDl?.mainImage?._id }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Length: </p>
+          <p class="col">{{ postOnSDl?.mainImage?.length }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Chunk Size: </p>
+          <p class="col">{{ postOnSDl?.mainImage?.chunkSize }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Upload Date: </p>
+          <p class="col">{{ postOnSDl?.mainImage?.uploadDate }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Filename: </p>
+          <p class="col">{{ postOnSDl?.mainImage?.filename }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Main Image Content type: </p>
+          <p class="col">{{ postOnSDl?.mainImage?.contentType }}</p>
+        </div>
+
+        <div class="row" *ngFor="let imageOnSDl of postOnSDl?.images; index as i;">
+          <div class="row">
+            <p class="col">Images Image: </p>
+            <p class="col"><img class="postOnSDlUserImage" src="{{postOnSDl.imagesPaths[i]}}" alt="The post image {{ imageOnSDl?.filename }}."></p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Id: </p>
+            <p class="col">{{ imageOnSDl?._id }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Length: </p>
+            <p class="col">{{ imageOnSDl?.length }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Chunk Size: </p>
+            <p class="col">{{ imageOnSDl?.chunkSize }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Upload Date: </p>
+            <p class="col">{{ imageOnSDl?.uploadDate }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Filename: </p>
+            <p class="col">{{ imageOnSDl?.filename }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Images Image Content type: </p>
+            <p class="col">{{ imageOnSDl?.contentType }}</p>
+          </div>
+        </div>
+
+        <div class="row" *ngFor="let videoOnSDl of postOnSDl?.videos; index as i;">
+          <div class="row">
+            <p class="col">Videos Video: </p>
+            <p class="col">
+              <video class="video postFileSize" controls>
+                <source src="{{postOnSDl.videosPaths[i]}}" type="{{videoOnSDl.contentType}}"/>
+              </video>
+            </p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Id: </p>
+            <p class="col">{{ videoOnSDl?._id }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Length: </p>
+            <p class="col">{{ videoOnSDl?.length }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Chunk Size: </p>
+            <p class="col">{{ videoOnSDl?.chunkSize }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Upload Date: </p>
+            <p class="col">{{ videoOnSDl?.uploadDate }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Filename: </p>
+            <p class="col">{{ videoOnSDl?.filename }}</p>
+          </div>
+          <div class="row">
+            <p class="col">Videos Video Content type: </p>
+            <p class="col">{{ videoOnSDl?.contentType }}</p>
+          </div>
+        </div>
+
+        <div class="row" (click)="onEventOnSE($event)">
+          <button class="btn btn-outline-warning" [routerLink]="['/admin/post/edit', postOnSDl._id]">Edit Post</button>
+          <button class="btn btn-outline-danger" (click)="onDeleteOnSE(postOnSDl)">Remove Post</button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>

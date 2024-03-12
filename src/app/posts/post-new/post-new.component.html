@@ -1,0 +1,115 @@
+<section>
+  <fieldset>
+    <div *ngIf='postNewErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of postNewErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <legend>New Post</legend>
+    <form
+      [formGroup]='postAppNewForm'
+      enctype="multipart/form-data"
+      (ngSubmit)='onNewPostSubmit()'
+      autocomplete="off"
+    >
+      <div class="form-group row">
+        <label for="content" class="col-md-1 col-form-label incline">Post Content: </label>
+        <input
+          type="text"
+          name="content"
+          class="form-control col-md-5 incline"
+          formControlName="content"
+          placeholder="{{postAppNew.content}}"
+          minlength="1"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="category" class="col-md-1 col-form-label incline">Post Category: </label>
+        <input
+          type="text"
+          name="category"
+          class="form-control col-md-5 incline"
+          formControlName="category"
+          placeholder="{{postAppNew.category}}"
+          minlength="1"
+          maxlength="360"
+          required
+        />
+      </div>
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="mainImageSwitch">:  Switch To Upload New User Photo</label>
+        <input
+          type="checkbox"
+          role="switch"
+          name="mainImageSwitch"
+          class="form-check-input"
+          formControlName="mainImageSwitch"
+          [checked]="oldPostAppOldD"
+          (change)="onNewPPickedImageSwitch($event)"
+        >
+      </div>
+      <div class="image-preview row" *ngIf="oldPostAppOldD === false">
+        <img class="postFileSize" [src]="newPostPickedImage" [alt]="postAppNewForm.value.mainImage" *ngIf="newPostPickedImage !== '' && newPostPickedImage">
+      </div>
+      <div class="form-group row" *ngIf="oldPostAppOldD === false">
+        <label class="col-md-1 col-form-label incline" for="mainImage">User Post Image New:</label>
+        <input
+          type="file"
+          name="mainImage"
+          class="form-control col-md-5 incline"
+          formControlName="mainImage"
+          (change)="onNewPPickedImage($event)"
+        />
+      </div>
+      <div class="image-preview row" *ngIf="oldPostAppOldD === true">
+        <img class="postFileSize" [src]="oldPostPickedImage" [alt]="postAppNewForm.value.MainImageO" *ngIf="oldPostPickedImage !== '' && oldPostPickedImage">
+      </div>
+      <div class="form-group row" *ngIf="oldPostAppOldD === true">
+        <label class="col-md-1 col-form-label incline" for="inputGroupSelect01">User Post Image Old:</label>
+        <select
+          name="mainImageO"
+          class="form-select"
+          formControlName="mainImageO"
+          (change)="onNewPOPickedImage($event)"
+        >
+          <option *ngFor="let oldMIF of postsAppNew; index as i;" [ngValue]="oldMIF._id" [selected]="postsAppNew[0]._id">{{oldMIF.mainImage.filename}}</option>
+        </select>
+      </div>
+      <div class="image-preview row" *ngIf="newPostPickedImages.length !== 0 && newPostPickedImages">
+        <img class="postFileSize" *ngFor="let newPPI of newPostPickedImages; index as i;" [src]="newPPI" alt="{{newSelectedPostFiles[i].name}}">
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="images">Post Images:</label>
+        <input
+          type="file"
+          multiple
+          name="images"
+          class="form-control col-md-5 incline"
+          formControlName="images"
+          (change)="onNewPPickedImages($event)"
+        />
+      </div>
+      <div class="video-preview row" *ngIf="newPostPickedVideos.length !== 0 && newPostPickedVideos">
+        <video *ngFor="let newPPV of newPostPickedVideos; index as i;" class="video postFileSize" controls>
+          <source [src]="newPPV" type="{{newSelectedPostFilesV[i].type}}"/>
+        </video>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="videos">Post Videos:</label>
+        <input
+          type="file"
+          multiple
+          name="videos"
+          class="form-control col-md-5 incline"
+          formControlName="videos"
+          (change)="onNewPPickedVideos($event)"
+        />
+      </div>
+      <div class="form-group row">
+        <button class="btn btn-primary" *ngIf='(postAppNewForm.valid && postAppNewForm.value.mainImage !== null) || (postAppNewForm.valid && postAppNewForm.value.mainImageO !== null)'>Submit</button>
+        <button class="btn btn-outline-info" routerLink="/admin/dash">Cancel</button>
+      </div>
+    </form>
+  </fieldset>
+</section>

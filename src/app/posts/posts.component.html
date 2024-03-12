@@ -1,0 +1,114 @@
+<section>
+  <div *ngIf='postsOnSListErrors.length' class="row postsOnSListErrorContainer">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of postsOnSListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Post Content </th>
+        <th scope="col">Post Category </th>
+        <th scope="col">Post Username </th>
+        <th scope="col">Post Likes </th>
+        <th scope="col">Post Creation Date </th>
+        <th scope="col">Post Updated Date </th>
+        <th scope="col">Post Main Image Id </th>
+        <th scope="col">Post Main Image Length </th>
+        <th scope="col">Post Main Image Chunk Size </th>
+        <th scope="col">Post Main Image Upload Date </th>
+        <th scope="col">Post Main Image Filename </th>
+        <th scope="col">Post Main Image </th>
+        <th scope="col">Post Main Image Content Type </th>
+        <th scope="col">Post Images </th>
+        <th scope="col">Post Videos </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let postOnS of postsOnSi; index as i;"
+        (click)="onSelectPostPCOnS(postOnS)"
+        [routerLink]="['/admin/post/details', postOnS._id]"
+      >
+        <th hidden scope="row">{{ postOnS._id }}</th>
+        <td>{{ postOnS.content }}</td>
+        <td>{{ postOnS.category }}</td>
+        <td>{{ postOnS.writtenBy }}</td>
+        <td>{{ postOnS.likes }}</td>
+        <td>{{ postOnS.createdAt }}</td>
+        <td>{{ postOnS.updatedAt }}</td>
+        <td>{{ postOnS.mainImage._id }}</td>
+        <td>{{ postOnS.mainImage.length }}</td>
+        <td>{{ postOnS.mainImage.chunkSize }}</td>
+        <td>{{ postOnS.mainImage.uploadDate }}</td>
+        <td><img class="postOnSUserImage postFileSize" src="{{postOnS.mainImagePath}}" alt="The posts owner user image."></td>
+        <td>{{ postOnS.mainImage.filename }}</td>
+        <td>{{ postOnS.mainImage.contentType }}</td>
+        <td>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Images Image Id </th>
+                <th scope="col">Images Image Length </th>
+                <th scope="col">Images Image Chunk Size </th>
+                <th scope="col">Images Image Upload Date </th>
+                <th scope="col">Images Image </th>
+                <th scope="col">Images Image Filename </th>
+                <th scope="col">Images Image Content Type </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let imageOnS of postOnS.images; index as i;"
+              >
+                <td>{{ imageOnS._id }}</td>
+                <td>{{ imageOnS.length }}</td>
+                <td>{{ imageOnS.chunkSize }}</td>
+                <td>{{ imageOnS.uploadDate }}</td>
+                <td><img class="postOnSUserImage postFileSize" src="{{postOnS.imagesPaths[i]}}" alt="The posts owner user image."></td>
+                <td>{{ imageOnS.filename }}</td>
+                <td>{{ imageOnS.contentType }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Videos Video Id </th>
+                <th scope="col">Videos Video Length </th>
+                <th scope="col">Videos Video Chunk Size </th>
+                <th scope="col">Videos Video Upload Date </th>
+                <th scope="col">Videos Video</th>
+                <th scope="col">Videos Video Filename </th>
+                <th scope="col">Videos Video Content Type </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let videoOnS of postOnS.videos; index as i;"
+              >
+                <td>{{ videoOnS._id }}</td>
+                <td>{{ videoOnS.length }}</td>
+                <td>{{ videoOnS.chunkSize }}</td>
+                <td>{{ videoOnS.uploadDate }}</td>
+                <td>
+                  <video class="postFileSize" controls>
+                    <source src="{{postOnS.videosPaths[i]}}" type="{{videoOnS.contentType}}"/>
+                  </video>
+                </td>
+                <td>{{ videoOnS.filename }}</td>
+                <td>{{ videoOnS.contentType }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td (click)="onEventPCOnS($event)">
+          <button class="btn btn-outline-danger" (click)="onDeletePCOnS(postOnS)">Delete</button>
+          <button class="btn btn-outline-warning" (click)="onSelectPostPCOnS(postOnS)" [routerLink]="['/admin/post/edit', postOnS._id]">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

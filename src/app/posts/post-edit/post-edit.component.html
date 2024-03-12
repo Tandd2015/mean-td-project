@@ -1,0 +1,135 @@
+<section>
+  <fieldset>
+    <div *ngIf='postEditErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of postEditErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <legend>Edit Post</legend>
+    <form
+      [formGroup]='postAppEditForm'
+      enctype="multipart/form-data"
+      (ngSubmit)='onEditPostSubmit()'
+      autocomplete="off"
+    >
+      <div class="form-group row">
+        <label for="content" class="col-md-1 col-form-label incline">Post Content: </label>
+        <input
+          type="text"
+          name="content"
+          class="form-control col-md-5 incline"
+          formControlName="content"
+          placeholder="{{postAppEdit.content}}"
+          minlength="1"
+        />
+      </div>
+      <div class="form-group row">
+        <label for="category" class="col-md-1 col-form-label incline">Post Category: </label>
+        <input
+          type="text"
+          name="category"
+          class="form-control col-md-5 incline"
+          formControlName="category"
+          placeholder="{{postAppEdit.category}}"
+          minlength="1"
+          maxlength="360"
+        />
+      </div>
+      <div class="form-group row">
+        <label for="writtenBy" class="col-md-1 col-form-label incline">Post Written By: </label>
+        <input
+          type="text"
+          name="writtenBy"
+          class="form-control col-md-5 incline"
+          formControlName="writtenBy"
+          placeholder="{{postAppEdit.writtenBy}}"
+          minlength="1"
+          maxlength="360"
+        />
+      </div>
+      <div class="form-group row">
+        <label for="likes" class="col-md-1 col-form-label incline">Post Likes: </label>
+        <input
+        type="number"
+        name="likes"
+        class="form-control col-md-5 incline"
+        formControlName="likes"
+        placeholder="{{postAppEdit.likes}}"
+        />
+      </div>
+      <div class="image-preview row">
+        <img class="postFileSize" title="Current User Post Image" [src]="editPostPickedImage" [alt]="postAppEditForm.value.mainImage" *ngIf="editPostPickedImage !== '' && editPostPickedImage">
+      </div>
+      <div class="form-group row">
+        <p class="col-md-1 col-form-label incline">User Post Image</p>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="mainImage">Choose file</label>
+        <input
+          title="User Post Image"
+          placeholder="User Post Image"
+          type="file"
+          name="mainImage"
+          class="form-control col-md-5 incline"
+          formControlName="mainImage"
+          (change)="onEditPPickedImage($event)"
+        />
+      </div>
+      <div class="form-group row">
+        <img class="postFileSize" src="{{postAppEdit.mainImagePath}}" alt="The posts user image {{postAppEdit?.mainImage?.filename}}.">
+      </div>
+      <div class="image-preview row" *ngIf="editPostPickedImages.length !== 0 && editPostPickedImages">
+        <img class="postFileSize" *ngFor="let editPPI of editPostPickedImages; index as i;" [src]="editPPI" alt="{{editSelectedPostFiles[i].name}}">
+      </div>
+      <div class="form-group row">
+        <p class="col-md-1 col-form-label incline">Post Images</p>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="images">Choose files</label>
+        <input
+          title="Post Images"
+          placeholder="Post Images"
+          type="file"
+          multiple
+          name="images"
+          class="form-control col-md-5 incline"
+          formControlName="images"
+          (change)="onEditPPickedImages($event)"
+        />
+      </div>
+      <div class="form-group row">
+        <img class="postFileSize" *ngFor="let editPPostImages of postAppEdit.imagesPaths; index as i;" src="{{editPPostImages}}" alt="The posts images image {{postAppEdit.images[i].filename}}.">
+      </div>
+      <div class="video-preview row" *ngIf="editPostPickedVideos.length !== 0 && editPostPickedVideos">
+        <video *ngFor="let editPPV of editPostPickedVideos; index as i;" class="video postFileSize" controls>
+          <source [src]="editPPV" type="{{editSelectedPostFilesV[i].type}}"/>
+        </video>
+      </div>
+      <div class="form-group row">
+        <p class="col-md-1 col-form-label incline">Post Videos</p>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="videos">Choose files</label>
+        <input
+          title="Post Videos"
+          placeholder="Post Videos"
+          type="file"
+          multiple
+          name="videos"
+          class="form-control col-md-5 incline"
+          formControlName="videos"
+          (change)="onEditPPickedVideos($event)"
+        />
+      </div>
+      <div class="form-group row">
+        <video *ngFor="let editPPostVideos of postAppEdit.videosPaths; index as i;" class="video postFileSize" controls>
+          <source [src]="editPPostVideos" type="{{postAppEdit.videos[i].contentType}}"/>
+        </video>
+      </div>
+      <div class="form-group row">
+        <button class="btn btn-primary" *ngIf='postAppEditForm.valid'>Submit</button>
+        <button class="btn btn-outline-info" routerLink="/admin/dash">Cancel</button>
+      </div>
+    </form>
+  </fieldset>
+</section>

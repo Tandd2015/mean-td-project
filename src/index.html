@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MeanTdProject</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <app-root></app-root>
+    <script>
+      let map;
+      async function initMap() {
+        const { Map } = await google.maps.importLibrary("maps");
+        window.onload = function() {
+          map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: { lat:41.097255, lng:-84.262551 },
+          });
+          const mapMarkers = [
+            {
+              position: {
+                lat:41.097255,
+                lng:-84.262551
+              },
+              label: {
+                color: 'black',
+                text: 'Terry Dockery Investigations and Security Services'
+              },
+              title: 'Main Office',
+              info: '300 Oak St, Continental, OH, 45831',
+              options: {
+                animation: google.maps.Animation.BOUNCE,
+              }
+            },
+            {
+              position: {
+                lat:41.0149902517173,
+                lng:-84.0502639111812
+              },
+              label: {
+                color: 'black',
+                text: 'Service Area'
+              },
+              title: 'Terry Dockery Investigations and Security Services',
+              info: 'Ottawa, OH, Putnam County, 45875',
+              options: {
+                animation: google.maps.Animation.BOUNCE,
+              }
+            },
+            {
+              position: {
+                lat:41.646464836971916,
+                lng:-83.53340770525851
+              },
+              label: {
+                color: 'black',
+                text: "Service Area"
+              },
+              title: 'Terry Dockery Investigations and Security Services',
+              info: 'Toledo, OH, Locus County, All 31 zip codes',
+              options: {
+                animation: google.maps.Animation.BOUNCE,
+              }
+            },
+            {
+              position: {
+                lat:40.735712050206665,
+                lng:-84.10262203128673
+              },
+              label: {
+                color: 'black',
+                text: "Service Area"
+              },
+              title: 'Terry Dockery Investigations and Security Services',
+              info: 'Lima, OH, Allen County, 45801, 45804, 45805',
+              options: {
+                animation: google.maps.Animation.BOUNCE,
+              }
+            },
+            {
+              position: {
+                lat:41.043680929746166,
+                lng:-83.6495902743783,
+              },
+              label: {
+                color: 'black',
+                text: "Service Area"
+              },
+              title: 'Terry Dockery Investigations and Security Services',
+              info: 'Findlay, OH, Hancock County, 45839, 45840',
+              options: {
+                animation: google.maps.Animation.BOUNCE,
+              }
+            },
+          ];
+          let markersArr = [];
+          const infoWindow = new google.maps.InfoWindow();
+          mapMarkers.forEach((marker, i) => {
+            const nMarker = new google.maps.Marker({
+              map,
+              draggable: false,
+              animation: marker.options.animation,
+              position: {
+                lat: marker.position.lat,
+                lng: marker.position.lng,
+              },
+              title: `${marker.title}\n ${marker.info}\n`,
+              label: marker.label
+            });
+            nMarker.addListener("click", () => {
+              infoWindow.close();
+              infoWindow.setContent(nMarker.getTitle());
+              infoWindow.open(nMarker.getMap(), nMarker);
+            });
+            markersArr.push(nMarker);
+          });
+        };
+      }
+      async function loadGoogleMapsAPITwo() {
+        const response = await fetch('api/home/apiRoutes');
+        const scriptText = await response.text();
+        const script = document.createElement('script');
+        return new Promise((resolve, reject) => {
+            script.textContent = scriptText;
+            script.async = true;
+            script.defer = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+      }
+      loadGoogleMapsAPITwo()
+        .catch(error => {
+          console.error('Failed to load Google Maps API:', error);
+        });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>;

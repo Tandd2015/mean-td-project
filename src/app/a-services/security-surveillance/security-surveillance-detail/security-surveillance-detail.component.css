@@ -1,0 +1,208 @@
+section#selectedSecuritySurveillance, app-contact {
+  position: relative;
+}
+
+app-nav {
+  display: none;
+}
+
+section#selectedSecuritySurveillance {
+  width: 100%;
+}
+
+div#securitySurveillanceDetailHolder {
+  display: flex;
+}
+
+div#securitySurveillanceDetailTitles {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+}
+
+ul#securitySurveillanceDetailTitlesTable {
+  position: sticky;
+  top: 36%;
+  list-style: none;
+}
+
+li.securitySurveillanceDetailListItem {
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
+a.securitySurveillanceDetailListItemAtag {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+
+div#securitySurveillanceMainHolder {
+  width: 74%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+img.sSecuritySurveillanceImage {
+  height: 30%;
+  width: 90%;
+  margin-bottom: 1.5%;
+}
+
+p.sSecuritySurveillanceContent {
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: white;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 1.25vw;
+}
+
+h1.sSecuritySurveillanceTitle {
+  margin-bottom: 1%;
+  width: 90%;
+  text-align: center;
+  background-color: white;
+  font-size: 5vw;
+}
+
+button.sSecuritySurveillanceButton {
+  margin-bottom: 3%;
+}
+
+
+@media only screen and (min-width: 2478px) {
+  a.securitySurveillanceDetailListItemAtag {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 2022px) {
+  a.securitySurveillanceDetailListItemAtag {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  a.securitySurveillanceDetailListItemAtag {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 1390px) {
+}
+
+@media only screen and (max-width: 1246px) {
+  div#securitySurveillanceDetailTitles {
+    width: 28%;
+  }
+  div#securitySurveillanceMainHolder {
+    width: 72%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  div#securitySurveillanceDetailTitles {
+    width: 33%;
+    padding: 0;
+  }
+  div#securitySurveillanceMainHolder {
+    width: 67%;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 1.75vw;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  div#selectedInvestigation {
+    margin: 0;
+  }
+  div#securitySurveillanceDetailTitles {
+    width: 35%;
+  }
+  div#securitySurveillanceMainHolder {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 837px) {
+  a.securitySurveillanceDetailListItemAtag {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 724px) {
+  div#securitySurveillanceDetailTitles {
+    width: 40%;
+  }
+  div#securitySurveillanceMainHolder {
+    width: 60%;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 672px) {
+  a.securitySurveillanceDetailListItemAtag {
+    font-size: 0.99rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  div#securitySurveillanceDetailTitles {
+    display: none;
+  }
+  div#securitySurveillanceMainHolder {
+    width: 98%;
+  }
+  h1.sSecuritySurveillanceTitle {
+    font-size: 7.5vw;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 3.5vw;
+  }
+  div#securitySurveillanceDetailHolder {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+
+  :host ::ng-deep app-contact div#contactEndHolderCell {
+    width: 109%;
+  }
+
+  :host ::ng-deep app-contact div#contactEndHolder {
+    width: 109%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1.sSecuritySurveillanceTitle {
+    font-size: 8.5vw;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 3.75vw;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  h1.sSecuritySurveillanceTitle {
+    font-size: 9.5vw;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  h1.sSecuritySurveillanceTitle {
+    font-size: 1.85rem;
+  }
+  p.sSecuritySurveillanceContent {
+    font-size: 1rem;
+  }
+}

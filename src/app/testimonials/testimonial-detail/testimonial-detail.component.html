@@ -1,0 +1,90 @@
+<section class="selectedReview">
+  <fieldset>
+    <div *ngIf='selectedReviewEditErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of selectedReviewEditErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <legend class="">Review Details</legend>
+        <div class="row">
+          <p class="col">Review Id: </p>
+          <p class="col">{{ reviewOnSE?._id }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Review Content: </p>
+          <p class="col">{{ reviewOnSE?.content }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Review Username: </p>
+          <p class="col">{{ reviewOnSE?.writtenBy }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Review Likes: </p>
+          <p class="col">{{ reviewOnSE?.likes }}</p>
+        </div>
+        <div class="row">
+          <p class="col">User Image: </p>
+          <p class="col"><img class="reviewOnSEUserImage" src="{{reviewOnSE?.byImagePath}}" alt="The reviews owner user image."></p>
+        </div>
+        <div class="row">
+          <p class="col">Review Rating: </p>
+          <p class="col"><ngb-rating [rate]="reviewRatingFour" [readonly]="readonlyFour" [max]="maxFour"></ngb-rating></p>
+        </div>
+        <div class="row">
+          <p class="col">Owner Review Display: </p>
+          <p class="col">{{ reviewOnSE?.oAnswered }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Owner Response: </p>
+          <p class="col">{{ reviewOnSE?.oResponse }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Owner Response Date: </p>
+          <p class="col">{{ reviewOnSE?.oRDate }}</p>
+        </div>
+        <div class="row">
+          <p class="col">User Review Date: </p>
+          <p class="col">{{ reviewOnSE?.createdAt }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Owner Revision Date: </p>
+          <p class="col">{{ reviewOnSE?.updatedAt }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Id: </p>
+          <p class="col">{{ reviewOnSE?.byImage?._id }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Length: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.length }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Chunk Size: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.chunkSize }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Upload Date: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.uploadDate }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Filename: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.filename }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Md5: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.md5 }}</p>
+        </div>
+        <div class="row">
+          <p class="col">Image Content type: </p>
+          <p class="col">{{ reviewOnSE?.byImage?.contentType }}</p>
+        </div>
+        <div class="row" (click)="onEventOnSE($event)">
+          <button class="btn btn-outline-warning" [routerLink]="['/admin/review/edit', reviewOnSE._id]">Edit Review</button>
+          <button class="btn btn-outline-danger" (click)="onDeleteOnSE(reviewOnSE)">Remove Review</button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>

@@ -1,0 +1,24 @@
+<nav class="navBar">
+  <div class="navBarContainer">
+    <ul>
+      <li>
+        <a href="" routerLink="/home/dash">Home</a>
+      </li>
+      <li>
+        <p>→</p>
+      </li>
+      <li *ngIf="navExtenderInvestigations===true">
+        <a href="" routerLink="/home/investigations">Investigations Home</a>
+      </li>
+      <li *ngIf="navExtenderSecuritySurveillance===true">
+        <a href="" routerLink="/home/security-surveillance">Security and Surveillance Home</a>
+      </li>
+      <li *ngIf="navExtenderSecuritySurveillance===true || navExtenderInvestigations===true">
+        <p>→</p>
+      </li>
+      <li>
+        <p>{{selectedNavSection.title}}</p>
+      </li>
+    </ul>
+  </div>
+</nav>

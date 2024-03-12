@@ -1,0 +1,66 @@
+<section>
+  <fieldset>
+    <div *ngIf='newReviewErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of newReviewErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <legend>New Review</legend>
+    <form
+      [formGroup]='newReviewAppForm'
+      enctype="multipart/form-data"
+      (ngSubmit)='onNewReviewSubmit()'
+      autocomplete="off"
+    >
+      <div class="form-group row">
+        <label for="content" class="col-md-1 col-form-label incline">Review Content: </label>
+        <input
+          type="text"
+          name="content"
+          class="form-control col-md-5 incline"
+          formControlName="content"
+          minlength="1"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="writtenBy" class="col-md-1 col-form-label incline">Review Written By: </label>
+        <input
+          type="text"
+          name="writtenBy"
+          class="form-control col-md-5 incline"
+          formControlName="writtenBy"
+          minlength="1"
+          maxlength="360"
+          required
+        />
+      </div>
+      <div class="image-preview row">
+        <img [src]="newPickedImage" [alt]="newReviewAppForm.value.name" *ngIf="newPickedImage !== '' && newPickedImage">
+        <div class="" *ngIf="newPickedImage === ''"></div>
+      </div>
+      <div class="form-group row">
+        <p class="col-md-1 col-form-label incline">User Review Image</p>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label incline" for="byImage">Choose file</label>
+        <input
+          type="file"
+          name="byImage"
+          class="form-control col-md-5 incline"
+          formControlName="byImage"
+          (change)="onNewPickedImage($event)"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="byRating" class="col-md-1 col-form-label incline">Review Written By Rating: </label>
+        <ngb-rating formControlName="byRating" [readonly]="newReadonly" [max]="newMax" id="byRating" name="byRating" required></ngb-rating>
+      </div>
+      <div class="form-group row">
+        <button class="btn btn-primary" *ngIf='newReviewAppForm.valid'>Submit</button>
+        <button class="btn btn-outline-info" routerLink="/admin/dash">Cancel</button>
+      </div>
+    </form>
+  </fieldset>
+</section>

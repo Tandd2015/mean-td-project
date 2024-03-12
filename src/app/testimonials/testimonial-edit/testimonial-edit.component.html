@@ -1,0 +1,103 @@
+<section>
+  <fieldset>
+    <div *ngIf='reviewEditErrors.length' class="row">
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of reviewEditErrors'>{{ error }}</li>
+      </ul>
+    </div>
+    <legend>Edit Review</legend>
+    <form (submit)="onEditReviewSubmit($event, reviewAppEditForm)" #reviewAppEditForm="ngForm" autocomplete="off">
+      <div class="form-group row">
+        <label for="content" class="col-md-1 col-form-label incline">Review Content: </label>
+        <input
+          type="text"
+          name="content"
+          class="form-control col-md-5 incline"
+          [(ngModel)]="reviewAppEdit.content"
+          minlength="1"
+          placeholder="{{reviewAppEdit.content}}"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="likes" class="col-md-1 col-form-label incline">Review Likes: </label>
+        <input
+          type="number"
+          name="likes"
+          class="form-control col-md-5 incline"
+          [(ngModel)]="reviewAppEdit.likes"
+          placeholder="{{reviewAppEdit.likes}}"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="writtenBy" class="col-md-1 col-form-label incline">Review Written By: </label>
+        <input
+          type="text"
+          name="writtenBy"
+          class="form-control col-md-5 incline"
+          [(ngModel)]="reviewAppEdit.writtenBy"
+          minlength="1"
+          maxlength="360"
+          placeholder="{{reviewAppEdit.writtenBy}}"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <img class="reviewOnSUserImage" src="{{reviewAppEdit.byImagePath}}" alt="The reviews user image.">
+      </div>
+      <div class="form-group row">
+        <label for="byRating" class="col-md-1 col-form-label incline">Review Written By Rating: </label>
+        <input
+          type="number"
+          name="byRating"
+          class="form-control col-md-5 incline"
+          [(ngModel)]="reviewAppEdit.byRating"
+          placeholder="{{reviewAppEdit.byRating}}"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <label for="oAnswered" class="col-md-1 col-form-label incline">Review Authorized For Display: </label>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="oAnswered"
+            class="form-check-input"
+            [value]="true"
+            [(ngModel)]="reviewAppEdit.oAnswered"
+            required
+          />
+          <label for="oAnsweredTrue" class="form-check-label"> True</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="oAnswered"
+            class="form-check-input"
+            [value]="false"
+            [(ngModel)]="reviewAppEdit.oAnswered"
+            required
+          />
+          <label for="oAnsweredFalse" class="form-check-label"> False</label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="oResponse" class="col-md-1 col-form-label incline">Response to the Review: </label>
+        <input
+          type="text"
+          name="oResponse"
+          class="form-control col-md-5 incline"
+          [(ngModel)]="reviewAppEdit.oResponse"
+          minlength="1"
+          placeholder="{{reviewAppEdit.oResponse}}"
+          required
+        />
+      </div>
+      <div class="form-group row">
+        <button class="btn btn-primary" *ngIf='reviewAppEditForm.valid'>Submit</button>
+        <button class="btn btn-outline-info" routerLink="/admin/dash">Cancel</button>
+      </div>
+    </form>
+  </fieldset>
+</section>

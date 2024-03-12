@@ -1,0 +1,166 @@
+app-a-services {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.limitTextHeightAbout {
+  height: 40%;
+  overflow: hidden;
+}
+
+div#servicesSection {
+  margin-top: 12rem;
+}
+
+div#servicesSection div#pictureHolder {
+  display: flow-root;
+  text-align: center;
+}
+
+div#servicesSection div#pictureHolder .pictureTitle {
+  margin-bottom: 2rem;
+  padding-right: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: white;
+}
+
+div#servicesSection div#pictureHolder img#mainPicture {
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  height: 30rem;
+}
+
+div#servicesSection div#pictureHolder div#aboutSection {
+  align-items: start;
+  flex-direction: column;
+}
+
+div#servicesSection div#pictureHolder div#aboutSection p.aboutSectionContent {
+  width: 97%;
+  text-align: justify;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  background: white;
+}
+
+
+
+@media only screen and (min-width: 2258px) {
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 2030px) and (max-width: 2258px) {
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 3.25rem;
+  }
+}
+
+@media only screen and (min-width: 1719px) and (max-width: 2030px) {
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 2.75rem;
+  }
+}
+
+@media only screen and (min-width: 1566px) {
+  div#servicesSection div#pictureHolder img#mainPicture {
+    height: 50rem;
+  }
+}
+
+@media only screen and (max-width: 1566px) {
+  div#servicesSection div#pictureHolder img#mainPicture {
+    height: 40rem;
+  }
+  div#servicesSection div#pictureHolder div#aboutSection p.aboutSectionContent {
+    margin-bottom: 1.5rem;
+  }
+  div#servicesSection div#pictureHolder .pictureTitle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1450px) and (max-width: 1719px) {
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 2.25rem;
+  }
+  /* div#servicesSection div#pictureHolder div#aboutSection p.aboutSectionContent {
+    font-size: 1rem;
+  } */
+}
+
+@media only screen and (max-width: 1450px) {
+  div#servicesSection div#pictureHolder img#mainPicture {
+    height: 30rem;
+  }
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 1.75rem;
+  }
+  div#servicesSection div#pictureHolder div#aboutSection p.aboutSectionContent {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  /* div#servicesSection div#pictureHolder div#aboutSection p.aboutSectionContent {
+    font-size: 1.5rem;
+  } */
+}
+
+@media only screen and (max-width: 1120px) {
+  div#servicesSection {
+    margin-top: 6rem;
+  }
+
+  div#servicesSection div#pictureHolder img#mainPicture {
+    height: 20rem;
+  }
+
+  div#servicesSection div#pictureHolder .pictureTitle {
+    font-size: 1.25rem;
+    padding-right: 0rem;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  div#servicesSection div#pictureHolder img#mainPicture {
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  div#servicesSection div#pictureHolder button.aboutSectionButton {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* @media only screen and (max-width: 558px) {
+  div#servicesSection div#pictureHolder img#mainPicture {
+    width: 12rem;
+    height: 17rem;
+  }
+} */
+
+  @media screen and (max-width: 558px) {
+    div#servicesSection {
+      flex-direction: column-reverse;
+    }
+    div#servicesSection div#pictureHolder img#mainPicture {
+      width: 18rem;
+      height: 20rem;
+    }
+    app-a-services {
+      margin-top: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 345px) {
+    div#servicesSection div#pictureHolder img#mainPicture {
+      width: 16rem;
+    }
+  }

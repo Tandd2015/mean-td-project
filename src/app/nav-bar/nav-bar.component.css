@@ -1,0 +1,449 @@
+.navBar {
+  height: 6.50rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+}
+
+#navBarLogo {
+  background-color: #001da4;
+  background-size: 100%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+#navBarLogoPicture {
+  height: 6rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.basicG {
+  color: #b7c6e8;
+}
+
+li:hover .basicG {
+  color:white;
+}
+
+.navBarMenuContainer {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+}
+
+
+.navBarMenu {
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+  height: 100%;
+  float: right;
+}
+
+.navBarItem {
+  list-style: none;
+  transform: translateX(100rem);
+  animation: slideIn .5s forwards;
+  height: 100%;
+  width: max-content;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem:nth-child(5) {
+  animation-delay: 2s;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin: 0 1rem;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks:last-child {
+  margin-right: 0;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks::before,
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #b7c6e8;
+  left: 0;
+  transform: scaleX(0);
+  transition: all .5s ease;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks:hover,
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks:focus {
+  color: #b7c6e8;
+  transition: all .5s ease;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks:hover::before,
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks:hover::after {
+  transform: scaleX(1);
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.navBarMenuContainer .navBarMenu .navBarItem .navBarLinks::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.navBarLinks {
+  color: #fff;
+  transition: all .5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.headerBar {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: #fff;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.headerBarItem {
+  width: max-content;
+  height: 1.6rem;
+  color: #fff;
+}
+
+.headerBarLinks {
+  color: #b7c6e8;
+}
+
+@keyframes slideIn {
+  from {
+
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1617px) {
+  .headerBar {
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+  }
+  #navBarLogoPicture {
+    width: 18rem;
+  }
+}
+
+@media screen and (min-width: 1566px) {
+  .navBar {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 1566px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1266px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    font-size: 1rem;
+  }
+
+  .headerBar {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media screen and (max-width: 1120px) {
+  .navBar {
+    font-size: 0.75rem;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    letter-spacing: 0px;
+  }
+
+  #navBarLogoPicture {
+    width: 9rem;
+    height: 5rem;
+  }
+
+  .navBarMenu {
+    padding-left: 0.5rem;
+  }
+
+  .headerBar {
+    padding-left: 0.5rem;
+  }
+
+  li.headerBarItem {
+    height: 1.25rem;
+  }
+  li.headerBarItem p span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 902px) {
+  #navBarLogoPicture {
+    width: 7rem;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .headerBar {
+    display: none;
+  }
+
+  .navBar {
+    height: 5rem;
+  }
+
+  .navBarMenu {
+    padding-left: 0rem;
+  }
+
+  .navBarMenuContainer {
+    align-content: center;
+    justify-content: center;
+  }
+
+  #navBarLogoPicture {
+    height: 4rem;
+    width: 7rem;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem {
+    height: 4.25rem;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin: 0 0.5rem;
+    position: relative;
+    letter-spacing: 1px;
+  }
+
+}
+
+@media screen and (max-width: 674px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    letter-spacing: 0px;
+  }
+  #navBarLogoPicture {
+    width: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    font-size: 0.92rem;
+  }
+  #navBarLogo {
+    margin: 0rem 0rem 0rem .25rem;
+    /* margin: 2.5rem 0rem 0rem .5rem; */
+  }
+}
+
+@media screen and (max-width: 565px) {
+
+  #navBarLogoPicture {
+    /* height: 3rem; */
+    border-radius: 0.5rem;
+  }
+
+  .navBarMenuContainer {
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  .navBarMenuContainer .navBarMenu {
+    display: grid;
+    grid-template-columns: auto;
+    width: 60%;
+    margin: 0;
+    position: absolute;
+    top: -1000px;
+    background: #0d81fd;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+    justify-content: center;
+  }
+
+  .navBarMenuContainer .navBarMenu.active {
+    background: #0d81fd;
+    width: 56%;
+    top: 0;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    z-index: 99;
+    align-content: center;
+  }
+  .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(5) {
+    width: max-content;
+  }
+
+  .navBarMenuContainer .navBarToggle .bar {
+    width: 25px;
+    height: 0.2rem;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    display: block;
+    cursor: pointer;
+  }
+
+  .navBarMenuContainer #mobileMenu {
+    position: fixed;
+    top: 2.5%;
+    right: 3%;
+    transform: translate(5%, 20%);
+  }
+
+  .navBarMenuContainer #mobileMenu.is-active {
+    height: max-content;
+    width: max-content;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 1.75rem;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem .navBarLinks {
+    text-align: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    width: 100%;
+    display: table;
+  }
+
+  .navBarMenuContainer #mobileMenu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navBarMenuContainer #mobileMenu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navBarMenuContainer #mobileMenu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+}
+
+/* @media screen and (max-width: 402px) {
+  #navBarLogoPicture {
+    width: 5rem;
+  }
+} */
+
+@media screen and (max-width: 290px) {
+  #navBarLogoPicture {
+    width: 4rem;
+  }
+
+  .navBarMenuContainer .navBarMenu.active {
+    width: 40%;
+  }
+
+  .navBarMenuContainer .navBarMenu .navBarItem {
+    width: max-content;
+  }
+
+  .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(1) {
+    padding-left: 3.5rem;
+  }
+
+  .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(2) {
+    padding-left: 3rem;
+  }
+
+  .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(3) {
+    padding-left: 2.6rem;
+  }
+
+  .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(4) {
+    padding-left: 2rem;
+  }
+
+
+  @media screen and (max-width: 184px) {
+    #navBarLogoPicture {
+      width: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 168px) {
+    #navBarLogoPicture {
+      display: none;
+    }
+    .navBarMenuContainer .navBarMenu.active {
+      padding-left: 3rem;
+    }
+    .navBarMenuContainer .navBarMenu.active .navBarItem:nth-child(5) {
+      padding-left: 0.75rem;
+    }
+  }
+}

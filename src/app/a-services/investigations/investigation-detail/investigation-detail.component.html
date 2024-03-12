@@ -1,0 +1,25 @@
+<section id="selectedInvestigation">
+  <div *ngIf='selectedInvestigationErrors.length' class="row">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of selectedInvestigationErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-nav [selectedNavSection]="sInvestigationD"></app-nav>
+  <div class="row" id="investigationsDetailHolder">
+    <div class="" id="investigationsDetailTitles">
+      <ul class="row" id="investigationsDetailTitlesTable">
+        <li *ngFor="let investigationDTitle of investigationsDetail;" class="investigationsDetailListItem">
+          <a *ngIf="investigationDTitle.title!=='Investigations Home'" [routerLink]="['/home/investigation/details', investigationDTitle._id]" class="investigationsDetailListItemAtag">{{investigationDTitle.title}}</a>
+          <a *ngIf="investigationDTitle.title==='Investigations Home'" routerLink="/home/investigations" class="investigationsDetailListItemAtag">{{investigationDTitle.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="" id="investigationsMainHolder">
+      <h1 id="sInvestigationTitleId" class="sInvestigationTitle">{{ sInvestigation?.title }}</h1>
+      <img class="sInvestigationImage" src="{{sInvestigation?.sectionImagePath}}" alt="The picture {{sInvestigation?.sectionImage?.filename}} of {{sInvestigation?.title}} was not available.">
+      <p class="sInvestigationContent" *ngFor="let investCon of sInvestigationDContentSplit">{{ investCon }}</p>
+      <button class="btn btn-primary sInvestigationButton" routerLink="/home/investigations">Go Back</button>
+    </div>
+  </div>
+</section>
+<app-contact></app-contact>

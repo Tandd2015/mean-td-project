@@ -1,0 +1,27 @@
+<div class="row" id="aServicesSection">
+  <div *ngIf='sectionsListErrors.length' class="col" id="aboutErrors">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of sectionsListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <div class="col" id="services">
+    <h1>Available Services</h1>
+    <ul
+      class="row sections"
+      *ngFor="let section of sections;"
+    >
+      <li class="sectionsListItem">
+        <h2>{{section.title}}</h2>
+      </li>
+    </ul>
+    <ul class="row sections" id="sizeSection">
+      <li class="sectionsListItem">
+        <h2>- Read More -</h2>
+      </li>
+      <li class="readMoreButtonHolder">
+        <button type="button" class="btn btn-primary">Investigations</button>
+        <button type="button" class="btn btn-primary">Security & Surveillance</button>
+      </li>
+    </ul>
+  </div>
+</div>

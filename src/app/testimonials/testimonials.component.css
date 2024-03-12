@@ -1,0 +1,15 @@
+ngb-rating {
+  color: #FFC107;
+  font-size: 1.5rem;
+}
+
+.reviewGUserImage {
+  height: 3rem;
+  width: 3rem;
+}
+
+.postFileSize {
+  height: 20rem;
+  width: 20rem;
+}
+

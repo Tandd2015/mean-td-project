@@ -1,0 +1,60 @@
+<section>
+  <div *ngIf='reviewsOnSListErrors.length' class="row reviewsOnSListErrorContainer">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of reviewsOnSListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Review Content </th>
+        <th scope="col">Review Username </th>
+        <th scope="col">Review Likes </th>
+        <th scope="col">User Image </th>
+        <th scope="col">User Rating </th>
+        <th scope="col">Owner Review Display </th>
+        <th scope="col">Owner Response </th>
+        <th scope="col">Owner Response Date </th>
+        <th scope="col">User Review Date </th>
+        <th scope="col">Owner Revision Date </th>
+        <th scope="col">Image Id </th>
+        <th scope="col">Image Length </th>
+        <th scope="col">Image Chunk Size </th>
+        <th scope="col">Image Upload Date </th>
+        <th scope="col">Image Filename </th>
+        <th scope="col">Image Md5 </th>
+        <th scope="col">Image Content Type </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let reviewOnS of reviewsOnSi; index as i;"
+        (click)="onSelectReviewOnS(reviewOnS)"
+        [routerLink]="['/admin/review/details', reviewOnS._id]"
+      >
+        <th hidden scope="row">{{ reviewOnS._id }}</th>
+        <td>{{ reviewOnS.content }}</td>
+        <td>{{ reviewOnS.writtenBy }}</td>
+        <td>{{ reviewOnS.likes }}</td>
+        <td><img class="reviewOnSUserImage postFileSize" src="{{reviewOnS.byImagePath}}" alt="The reviews owner user image."></td>
+        <td><ngb-rating [rate]="reviewRatingThree[i]" [readonly]="readonlyThree" [max]="maxThree"></ngb-rating></td>
+        <td>{{ reviewOnS.oAnswered }}</td>
+        <td>{{ reviewOnS.oResponse }}</td>
+        <td>{{ reviewOnS.oRDate }}</td>
+        <td>{{ reviewOnS.createdAt }}</td>
+        <td>{{ reviewOnS.updatedAt }}</td>
+        <td>{{ reviewOnS.byImage._id }}</td>
+        <td>{{ reviewOnS.byImage.length }}</td>
+        <td>{{ reviewOnS.byImage.chunkSize }}</td>
+        <td>{{ reviewOnS.byImage.uploadDate }}</td>
+        <td>{{ reviewOnS.byImage.filename }}</td>
+        <td>{{ reviewOnS.byImage.md5 }}</td>
+        <td>{{ reviewOnS.byImage.contentType }}</td>
+        <td (click)="onEventOnS($event)">
+          <button class="btn btn-outline-danger" (click)="onDeleteOnS(reviewOnS)">Delete</button>
+          <button class="btn btn-outline-warning" (click)="onSelectReviewOnS(reviewOnS)" [routerLink]="['/admin/review/edit', reviewOnS._id]">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

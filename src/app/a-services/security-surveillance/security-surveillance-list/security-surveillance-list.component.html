@@ -1,0 +1,60 @@
+<div class="row" id="securitySurveillanceListsSection">
+  <div *ngIf='securitySurveillanceListErrors.length' class="col" id="securitySurveillanceListErrors">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of securitySurveillanceListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-nav [selectedNavSection]="securitySurveillance"></app-nav>
+  <div class="" id="securitySurveillanceTitles">
+    <ul class="row" id="securitySurveillanceTitlesTable">
+      <li>
+        <a routerLink="/home/security-surveillance">{{securitySurveillance.title}}</a>
+      </li>
+      <li class="securityListItem" *ngFor="let securityTitle of security;">
+        <a [routerLink]="['/home/security/details', securityTitle._id]" >{{securityTitle.title}}</a>
+      </li>
+      <li class="surveillanceListItem" *ngFor="let surveillanceTitle of surveillance;">
+        <a [routerLink]="['/home/surveillance/details', surveillanceTitle._id]" >{{surveillanceTitle.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col" id="securitySurveillanceHome">
+    <section class="row">
+      <fieldset>
+        <div class="row">
+          <legend class="">Terry Dockery Investigations and Security Services</legend>
+          <img class="securitySurveillanceImage" src="{{securitySurveillance.sectionImagePath}}" alt="The picture {{securitySurveillance?.sectionImage?.filename}} of {{securitySurveillance.title}} was not available.">
+          <p *ngFor="let secSurCon of surveillanceContentSplit" class="">{{secSurCon}}</p>
+        </div>
+      </fieldset>
+    </section>
+  </div>
+  <div class="col-3 col-lg-4" id="securitySurveillance">
+    <h1>Security and Surveillance Services</h1>
+    <ul
+      class="row security"
+      *ngFor="let securityList of security;"
+    >
+      <li class="securityListItem">
+        <div hidden scope="row">{{ securityList._id }}</div>
+        <h4>{{securityList.title}}</h4>
+        <img class="securityImage" src="{{securityList.sectionImagePath}}" alt="The picture {{securityList.sectionImage.filename}} of {{securityList.title}} was not available.">
+        <p>Terry Dockery Investigations & Security Services provides {{securityList.title}}.</p>
+        <button class="btn btn-primary"  [routerLink]="['/home/security/details', securityList._id]">Read More</button>
+      </li>
+    </ul>
+    <ul
+      class="row surveillance"
+      *ngFor="let surveillanceList of surveillance;"
+    >
+      <li class="surveillanceListItem">
+        <div hidden scope="row">{{ surveillanceList._id }}</div>
+        <h4>{{surveillanceList.title}}</h4>
+        <img class="surveillanceImage" src="{{surveillanceList.sectionImagePath}}" alt="The picture {{surveillanceList.sectionImage.filename}} of {{surveillanceList.title}} was not available.">
+        <p>Terry Dockery Investigations & Security Services provides {{surveillanceList.title}}.</p>
+        <button class="btn btn-primary"  [routerLink]="['/home/surveillance/details', surveillanceList._id]">Read More</button>
+      </li>
+    </ul>
+  </div>
+</div>
+<app-contact [securitySwap]="securitySwap"></app-contact>

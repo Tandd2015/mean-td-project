@@ -1,0 +1,15 @@
+<section>
+  <div *ngIf='postsMixedListErrors.length' class="row postsMixedListErrorContainer">
+    <ul class="alert alert-danger">
+      <li *ngFor='let error of postsMixedListErrors'>{{ error }}</li>
+    </ul>
+  </div>
+  <app-carousel
+    *ngIf="postsGoogle && postsGoogle.length > 0"
+    [carouselGooglePosts]="postsGoogle"
+    [posterLinkGooglePosts]="posterLink"
+    [carouselGooglePostsAutoSlide]="autoSlidePostStopperGoogle"
+    (mouseover)="stopAutoSlidePostGoogle()"
+    (mouseout)="startAutoSlidePostGoogle()"
+  ></app-carousel>
+</section>
