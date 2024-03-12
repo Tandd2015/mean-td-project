@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { ContactComponent } from './contact.component';\nimport { MapComponent } from './map/map.component';\nexport const components = [ContactComponent, MapComponent];\nexport * from './contact.component';\nexport * from './map/map.component';","map":null,"metadata":{},"sourceType":"module"}
