@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mean-td-project:build"
+            "browserTarget": "mean-td-project:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {

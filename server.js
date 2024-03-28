@@ -3,10 +3,11 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
-const process = require('process');
-const port = process.env.PORT;
 require('dotenv').config();
+const process = require('process');
+const port = process.env.PORT || 5000;
 const tdApp = express();
 // process.once('warning', (warning) => {
 //   console.warn('Warning Stack Trace =>' + warning.stack)
@@ -15,6 +16,7 @@ const tdApp = express();
 require('./server/config/tdDatabase');
 
 tdApp
+  .use(cors())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(express.static(path.join(__dirname,'dist','mean-td-project')))

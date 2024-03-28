@@ -245,13 +245,13 @@ module.exports = {
               .then(posts => {
                 deleteAllManualPosts(posts);
                 createAllPosts(tryResponsePost[tryResponsePost.length-2])
-                .then(newPosts => {
-                  resolve(newPosts);
-                })
-                .catch(error => {
-                  console.log('retryItPosts - createAllPosts -- .then-1 -- .catch-1 \n', error);
-                  resolve([]);
-                });
+                  .then(newPosts => {
+                    resolve(newPosts);
+                  })
+                  .catch(error => {
+                    console.log('retryItPosts - createAllPosts -- .then-1 -- .catch-1 \n', error);
+                    resolve([]);
+                  });
               })
               .catch(error => {
                 console.log('retryItPosts - Post.find({}) -- .catch-1 \n', error);
